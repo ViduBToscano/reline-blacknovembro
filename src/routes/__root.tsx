@@ -77,16 +77,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Black de Novembro Reline" },
+      {
+        name: "description",
+        content:
+          "Campanha Black de Novembro da Reline Cosméticos — descontos progressivos a partir de 04.11.",
+      },
+      { name: "author", content: "Renata Fraga Hair Spa" },
+      { property: "og:title", content: "Black de Novembro Reline" },
+      {
+        property: "og:description",
+        content:
+          "Campanha Black de Novembro da Reline Cosméticos — descontos progressivos a partir de 04.11.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
