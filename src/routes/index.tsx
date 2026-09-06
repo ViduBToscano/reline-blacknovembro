@@ -154,16 +154,47 @@ function useCountdown() {
 function Index() {
   const clock = useCountdown();
   const enviarLead = useServerFn(submitLead);
+  const registrar = useServerFn(trackEvent);
   const [nome, setNome] = useState("");
   const [zap, setZap] = useState("");
   const [insta, setInsta] = useState("");
   const [erro, setErro] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [sent, setSent] = useState(false);
+  const formRef = useRef<HTMLElement | null>(null);
+
+  const track = (event: "form_view" | "form_submit_click" | "popup_view" | "community_click") => {
+    void registrar({ data: { event } }).catch(() => {});
+  };
+
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    let done = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!done && entries.some((e) => e.isIntersecting)) {
+          done = true;
+          track("form_view");
+          io.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (sent) track("popup_view");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sent]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro("");
+    track("form_submit_click");
 
     if (nome.trim().length < 2) {
       setErro("Por favor, informe seu nome.");
@@ -195,6 +226,7 @@ function Index() {
       setEnviando(false);
     }
   };
+
 
   return (
     <div className="overflow-x-hidden bg-background text-foreground">
