@@ -2,7 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useState } from "react";
 
-import { getLeads, lockPanel, unlockPanel, type Lead } from "@/lib/leads.functions";
+import {
+  getEventStats,
+  getLeads,
+  lockPanel,
+  unlockPanel,
+  type EventStats,
+  type Lead,
+} from "@/lib/leads.functions";
 
 export const Route = createFileRoute("/painel")({
   ssr: false,
@@ -29,19 +36,27 @@ function toCsv(leads: Lead[]) {
 
 function Painel() {
   const fetchLeads = useServerFn(getLeads);
+  const fetchStats = useServerFn(getEventStats);
   const unlock = useServerFn(unlockPanel);
   const lock = useServerFn(lockPanel);
 
   const [unlocked, setUnlocked] = useState(false);
   const [leads, setLeads] = useState<Lead[]>([]);
+  const [stats, setStats] = useState<EventStats>({
+    form_view: 0,
+    form_submit_click: 0,
+    popup_view: 0,
+    community_click: 0,
+  });
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const load = async () => {
-    const res = await fetchLeads({});
+    const [res, ev] = await Promise.all([fetchLeads({}), fetchStats({})]);
     setUnlocked(res.unlocked);
     setLeads(res.leads);
+    setStats(ev.stats);
     setLoading(false);
   };
 
@@ -135,6 +150,20 @@ function Painel() {
               Sair
             </button>
           </div>
+        </div>
+
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { label: "Viram o formulário", value: stats.form_view },
+            { label: "Clicaram em enviar", value: stats.form_submit_click },
+            { label: "Chegaram ao pop-up", value: stats.popup_view },
+            { label: "Clicaram na comunidade", value: stats.community_click },
+          ].map((card) => (
+            <div key={card.label} className="rounded-2xl border border-border bg-ink-2/70 p-5">
+              <p className="text-3xl font-extrabold text-card-foreground">{card.value}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{card.label}</p>
+            </div>
+          ))}
         </div>
 
         <div className="overflow-x-auto rounded-2xl border border-border">

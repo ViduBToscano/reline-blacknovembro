@@ -107,3 +107,63 @@ export const getLeads = createServerFn({ method: "GET" }).handler(async () => {
   }
   return { unlocked: true as const, leads: (data ?? []) as Lead[] };
 });
+
+const eventSchema = z.object({
+  event: z.enum(["form_view", "form_submit_click", "popup_view", "community_click"]),
+});
+
+function publicClient() {
+  const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
+  return createClient<Database>(process.env["SUPABASE_URL"]!, key, {
+    auth: { persistSession: false, autoRefreshToken: false },
+    global: {
+      fetch: (input, init) => {
+        const h = new Headers(init?.headers);
+        if (key.startsWith("sb_") && h.get("Authorization") === `Bearer ${key}`) {
+          h.delete("Authorization");
+        }
+        h.set("apikey", key);
+        return fetch(input, { ...init, headers: h });
+      },
+    },
+  });
+}
+
+export const trackEvent = createServerFn({ method: "POST" })
+  .inputValidator((data: unknown) => eventSchema.parse(data))
+  .handler(async ({ data }) => {
+    const { error } = await publicClient().from("page_events").insert({ event: data.event });
+    if (error) console.error("event insert failed", error.message);
+    return { ok: !error };
+  });
+
+export type EventStats = {
+  form_view: number;
+  form_submit_click: number;
+  popup_view: number;
+  community_click: number;
+};
+
+export const getEventStats = createServerFn({ method: "GET" }).handler(async () => {
+  const session = await useSession<PanelSession>(sessionConfig);
+  const empty: EventStats = {
+    form_view: 0,
+    form_submit_click: 0,
+    popup_view: 0,
+    community_click: 0,
+  };
+  if (!session.data.unlocked) return { unlocked: false as const, stats: empty };
+
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+  const { data, error } = await supabaseAdmin.from("page_events").select("event").limit(50000);
+  if (error) {
+    console.error("events read failed", error.message);
+    return { unlocked: true as const, stats: empty };
+  }
+  const stats = { ...empty };
+  for (const row of data ?? []) {
+    const key = row.event as keyof EventStats;
+    if (key in stats) stats[key] += 1;
+  }
+  return { unlocked: true as const, stats };
+});

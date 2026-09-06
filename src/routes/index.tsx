@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   Dialog,
@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { submitLead } from "@/lib/leads.functions";
+import { submitLead, trackEvent } from "@/lib/leads.functions";
 
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
@@ -154,16 +154,47 @@ function useCountdown() {
 function Index() {
   const clock = useCountdown();
   const enviarLead = useServerFn(submitLead);
+  const registrar = useServerFn(trackEvent);
   const [nome, setNome] = useState("");
   const [zap, setZap] = useState("");
   const [insta, setInsta] = useState("");
   const [erro, setErro] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [sent, setSent] = useState(false);
+  const formRef = useRef<HTMLElement | null>(null);
+
+  const track = (event: "form_view" | "form_submit_click" | "popup_view" | "community_click") => {
+    void registrar({ data: { event } }).catch(() => {});
+  };
+
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    let done = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!done && entries.some((e) => e.isIntersecting)) {
+          done = true;
+          track("form_view");
+          io.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (sent) track("popup_view");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sent]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro("");
+    track("form_submit_click");
 
     if (nome.trim().length < 2) {
       setErro("Por favor, informe seu nome.");
@@ -195,6 +226,7 @@ function Index() {
       setEnviando(false);
     }
   };
+
 
   return (
     <div className="overflow-x-hidden bg-background text-foreground">
@@ -485,6 +517,7 @@ function Index() {
       {/* Cadastro */}
       <section
         id="cadastro"
+        ref={formRef}
         className="relative overflow-hidden px-5 py-[5.5rem]"
         style={{ background: "var(--grad-panel-c)" }}
       >
@@ -580,9 +613,11 @@ function Index() {
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 flex justify-center">
-            <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
-              Entrar na comunidade
-            </WhatsAppButton>
+            <span onClick={() => track("community_click")}>
+              <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
+                Entrar na comunidade
+              </WhatsAppButton>
+            </span>
           </div>
         </DialogContent>
       </Dialog>
