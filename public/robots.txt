@@ -15,3 +15,5 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow: /painel
+
+Sitemap: https://reline-black-promo.lovable.app/sitemap.xml
