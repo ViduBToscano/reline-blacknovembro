@@ -16,4 +16,4 @@ User-agent: *
 Allow: /
 Disallow: /painel
 
-Sitemap: https://reline-black-promo.lovable.app/sitemap.xml
+Sitemap: https://reline-blacknovembro.lovable.app/sitemap.xml

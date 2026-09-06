@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE_URL = "https://reline-black-promo.lovable.app";
+const BASE_URL = "https://reline-blacknovembro.lovable.app";
 
 const PATHS = ["/", "/privacidade", "/cookies"];
 

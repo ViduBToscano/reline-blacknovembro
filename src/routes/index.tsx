@@ -24,7 +24,7 @@ import CookieBanner from "@/components/reline/CookieBanner";
 
 const EVENT_START = "2026-11-04T00:00:00-03:00";
 const EVENT_END = "2026-11-30T23:59:59-03:00";
-const EVENT_URL = "/";
+const EVENT_URL = "https://reline-blacknovembro.lovable.app/";
 
 export const Route = createFileRoute("/")({
   head: () => ({

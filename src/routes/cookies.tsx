@@ -16,9 +16,9 @@ export const Route = createFileRoute("/cookies")({
           "Entenda quais cookies a Reline Cosméticos utiliza nesta página, para que servem e como gerenciar seu consentimento.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/cookies" },
+      { property: "og:url", content: "https://reline-blacknovembro.lovable.app/cookies" },
     ],
-    links: [{ rel: "canonical", href: "/cookies" }],
+    links: [{ rel: "canonical", href: "https://reline-blacknovembro.lovable.app/cookies" }],
   }),
   component: CookiesPage,
 });
