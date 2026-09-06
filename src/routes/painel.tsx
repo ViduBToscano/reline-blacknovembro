@@ -1,0 +1,175 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { useEffect, useState } from "react";
+
+import { getLeads, lockPanel, unlockPanel, type Lead } from "@/lib/leads.functions";
+
+export const Route = createFileRoute("/painel")({
+  ssr: false,
+  head: () => ({
+    meta: [
+      { title: "Painel interno — Reline" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
+  component: Painel,
+});
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+}
+
+function toCsv(leads: Lead[]) {
+  const rows = [
+    ["Data", "Nome", "WhatsApp", "Instagram"],
+    ...leads.map((l) => [formatDate(l.created_at), l.nome, l.whatsapp, l.instagram ?? ""]),
+  ];
+  return rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(";")).join("\n");
+}
+
+function Painel() {
+  const fetchLeads = useServerFn(getLeads);
+  const unlock = useServerFn(unlockPanel);
+  const lock = useServerFn(lockPanel);
+
+  const [unlocked, setUnlocked] = useState(false);
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const load = async () => {
+    const res = await fetchLeads({});
+    setUnlocked(res.unlocked);
+    setLeads(res.leads);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    void load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(false);
+    const res = await unlock({ data: { password } });
+    if (!res.ok) {
+      setError(true);
+      return;
+    }
+    setPassword("");
+    setLoading(true);
+    await load();
+  };
+
+  const onExport = () => {
+    const blob = new Blob([`\uFEFF${toCsv(leads)}`], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "leads-black-novembro.csv";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background text-muted-foreground">
+        Carregando…
+      </div>
+    );
+  }
+
+  if (!unlocked) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background px-5">
+        <form
+          onSubmit={onSubmit}
+          className="w-full max-w-sm rounded-3xl border border-border bg-ink-2/70 p-8"
+        >
+          <h1 className="mb-2 text-xl font-extrabold text-card-foreground">Painel interno</h1>
+          <p className="mb-6 text-sm text-muted-foreground">
+            Digite a senha de acesso para ver os cadastros.
+          </p>
+          <input
+            type="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Senha"
+            className="w-full rounded-xl border border-input bg-white/5 px-4 py-3 text-card-foreground outline-none focus:border-rose"
+          />
+          {error && <p className="mt-3 text-sm text-rose-lt">Senha incorreta.</p>}
+          <button type="submit" className="btn-cta mt-5 w-full">
+            Entrar
+          </button>
+        </form>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background px-5 py-12">
+      <div className="container-page">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-extrabold text-card-foreground">Cadastros da Black</h1>
+            <p className="text-sm text-muted-foreground">{leads.length} cadastro(s)</p>
+          </div>
+          <div className="flex gap-3">
+            <button
+              onClick={onExport}
+              className="rounded-xl border border-border px-4 py-2 text-sm font-semibold text-card-foreground hover:border-rose"
+            >
+              Exportar CSV
+            </button>
+            <button
+              onClick={async () => {
+                await lock({});
+                setUnlocked(false);
+                setLeads([]);
+              }}
+              className="rounded-xl border border-border px-4 py-2 text-sm font-semibold text-muted-foreground hover:border-rose"
+            >
+              Sair
+            </button>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto rounded-2xl border border-border">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-ink-2/70 text-[0.7rem] uppercase tracking-[0.12em] text-rose-lt/80">
+              <tr>
+                <th className="px-4 py-3">Data</th>
+                <th className="px-4 py-3">Nome</th>
+                <th className="px-4 py-3">WhatsApp</th>
+                <th className="px-4 py-3">Instagram</th>
+              </tr>
+            </thead>
+            <tbody className="text-card-foreground">
+              {leads.length === 0 ? (
+                <tr>
+                  <td colSpan={4} className="px-4 py-8 text-center text-muted-foreground">
+                    Nenhum cadastro ainda.
+                  </td>
+                </tr>
+              ) : (
+                leads.map((l) => (
+                  <tr key={l.id} className="border-t border-border">
+                    <td className="whitespace-nowrap px-4 py-3 text-muted-foreground">
+                      {formatDate(l.created_at)}
+                    </td>
+                    <td className="px-4 py-3">{l.nome}</td>
+                    <td className="whitespace-nowrap px-4 py-3">{l.whatsapp}</td>
+                    <td className="px-4 py-3">{l.instagram ?? "—"}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
