@@ -8,6 +8,13 @@
       "when": 1788701543461,
       "tag": "0000_create_leads",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788703078248,
+      "tag": "0001_create_page_events",
+      "breakpoints": true
     }
   ]
 }
