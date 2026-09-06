@@ -109,7 +109,7 @@ function Index() {
     <div className="overflow-x-hidden bg-background text-foreground">
       {/* Top bar */}
       <div className="flex flex-wrap justify-center gap-3.5 border-b border-border bg-ink-2 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[1.44px] text-rose-lt">
-        <span><span className="font-black-novembro">Black Novembro</span> Reline</span>
+        <span>Black Novembro Reline</span>
         <span className="text-rose/55">•</span>
         <span>Começa 04.11</span>
         <span className="text-rose/55">•</span>
