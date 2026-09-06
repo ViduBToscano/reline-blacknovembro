@@ -5,10 +5,10 @@ export function ChatBubble({ side, children }: { side: "in" | "out"; children: R
   return (
     <div className={`flex ${isIn ? "justify-start" : "justify-end"}`}>
       <p
-        className={`max-w-[85%] px-3.5 py-2.5 text-[0.86rem] leading-snug shadow-sm ${
+        className={`max-w-[85%] px-4 py-3 text-[0.86rem] leading-snug shadow-md ${
           isIn
             ? "rounded-[14px_14px_14px_2px] bg-secondary text-card-foreground"
-            : "rounded-[14px_14px_2px_14px] bg-cream/92 text-ink"
+            : "rounded-[14px_14px_2px_14px] bg-cream-lt text-ink"
         }`}
       >
         {children}
@@ -19,18 +19,18 @@ export function ChatBubble({ side, children }: { side: "in" | "out"; children: R
 
 export function AvatarStack({ avatars, caption }: { avatars: string[]; caption: string }) {
   return (
-    <div className="mt-auto flex items-center gap-3 border-t border-border pt-3">
-      <div className="flex -space-x-3">
+    <div className="mt-auto flex flex-col gap-2 border-t border-border pt-4">
+      <div className="flex -space-x-2 rounded-full bg-cream-lt p-1.5 w-fit">
         {avatars.map((src, i) => (
           <img
             key={i}
             src={src}
             alt=""
-            className="h-8 w-8 rounded-full border-2 border-ink-2 object-cover"
+            className="h-8 w-8 rounded-full border-2 border-cream-lt object-cover"
           />
         ))}
       </div>
-      <span className="text-[0.72rem] font-semibold tracking-wide text-muted-foreground">
+      <span className="max-w-[28ch] text-[0.72rem] font-semibold leading-snug tracking-wide text-muted-foreground">
         {caption}
       </span>
     </div>
