@@ -12,23 +12,63 @@ import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
 import { ChatPanel, ChatBubble, AvatarStack } from "@/components/reline/ChatPanel";
 import CookieBanner from "@/components/reline/CookieBanner";
 
+const EVENT_START = "2026-11-04T00:00:00-03:00";
+const EVENT_END = "2026-11-30T23:59:59-03:00";
+const EVENT_URL = "/";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Black Novembro Reline | Comunidade com acesso antecipado" },
+      { title: "Black Novembro Reline 2026 | Descontos progressivos a partir de 04.11" },
       {
         name: "description",
         content:
-          "A Black Novembro da Reline começa 04.11 com descontos progressivos. Entre na comunidade e saiba das condições antes de todo mundo.",
+          "A Black Novembro da Reline começa em 04 de novembro com descontos progressivos em produtos de nutrição, reconstrução, hidratação e finalização. Entre na comunidade e saiba das condições antes de todo mundo.",
       },
-      { property: "og:title", content: "Black Novembro Reline" },
+      { property: "og:title", content: "Black Novembro Reline 2026" },
       {
         property: "og:description",
         content:
-          "Descontos progressivos em produtos Reline a partir de 04 de novembro. A comunidade sabe primeiro.",
+          "Descontos progressivos em produtos Reline a partir de 04 de novembro. Quem está na comunidade sabe primeiro.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: EVENT_URL },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Black Novembro Reline 2026" },
+      {
+        name: "twitter:description",
+        content:
+          "Descontos progressivos em produtos Reline a partir de 04 de novembro. A comunidade sabe primeiro.",
+      },
+    ],
+    links: [{ rel: "canonical", href: EVENT_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SaleEvent",
+          name: "Black Novembro Reline 2026",
+          description:
+            "Campanha Black Novembro da Reline com descontos progressivos em produtos para nutrição, reconstrução, hidratação e finalização dos cabelos.",
+          startDate: EVENT_START,
+          endDate: EVENT_END,
+          eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+          eventStatus: "https://schema.org/EventScheduled",
+          url: EVENT_URL,
+          location: {
+            "@type": "VirtualLocation",
+            url: EVENT_URL,
+          },
+          organizer: {
+            "@type": "Organization",
+            name: "Renata Fraga Hair Spa",
+            url: EVENT_URL,
+          },
+          inLanguage: "pt-BR",
+        }),
+      },
     ],
   }),
   component: Index,
