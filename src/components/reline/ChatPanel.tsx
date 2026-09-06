@@ -19,8 +19,8 @@ export function ChatBubble({ side, children }: { side: "in" | "out"; children: R
 
 export function AvatarStack({ avatars, caption }: { avatars: string[]; caption: string }) {
   return (
-    <div className="mt-auto flex flex-col gap-2 border-t border-border pt-4">
-      <div className="flex -space-x-2 rounded-full bg-cream-lt p-1.5 w-fit">
+    <div className="mt-auto flex flex-row items-center gap-3 border-t border-border pt-4">
+      <div className="flex -space-x-2 rounded-full bg-cream-lt p-1.5 w-fit shrink-0">
         {avatars.map((src, i) => (
           <img
             key={i}
@@ -30,7 +30,7 @@ export function AvatarStack({ avatars, caption }: { avatars: string[]; caption: 
           />
         ))}
       </div>
-      <span className="max-w-[28ch] text-[0.72rem] font-semibold leading-snug tracking-wide text-muted-foreground">
+      <span className="text-[0.72rem] font-semibold leading-snug tracking-wide text-muted-foreground">
         {caption}
       </span>
     </div>
