@@ -77,21 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Black Novembro Reline" },
-      {
-        name: "description",
-        content:
-          "Campanha Black Novembro da Reline Cosméticos — descontos progressivos a partir de 04.11.",
-      },
       { name: "author", content: "Renata Fraga Hair Spa" },
-      { property: "og:title", content: "Black Novembro Reline" },
-      {
-        property: "og:description",
-        content:
-          "Campanha Black Novembro da Reline Cosméticos — descontos progressivos a partir de 04.11.",
-      },
+      { property: "og:site_name", content: "Reline Cosméticos" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

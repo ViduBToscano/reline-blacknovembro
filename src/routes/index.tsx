@@ -221,12 +221,22 @@ function Index() {
         <div className="container-page relative py-20">
           <div className="max-w-[620px]">
             <img src={logoAsset.url} alt="Reline" className="mb-6 h-8 w-auto" />
-            <h1 className="font-black-novembro text-metal m-0 text-[clamp(4rem,9.5vw,8.5rem)] leading-[0.86]">
-              BLACK
+            <h1 className="m-0">
+              <span className="sr-only">Black Novembro Reline 2026</span>
+              <span
+                aria-hidden="true"
+                className="font-black-novembro text-metal block text-[clamp(4rem,9.5vw,8.5rem)] leading-[0.86]"
+              >
+                BLACK
+              </span>
+              <span
+                aria-hidden="true"
+                className="font-black-novembro mb-8 mt-1 block text-[clamp(1.9rem,4.5vw,3.6rem)] uppercase leading-[1.05] text-rose-pale"
+              >
+                novembro
+              </span>
             </h1>
-            <p className="font-black-novembro mb-8 mt-1 text-[clamp(1.9rem,4.5vw,3.6rem)] uppercase leading-[1.05] text-rose-pale">
-              novembro
-            </p>
+
             <h2 className="mb-4 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
               A Black mais esperada do ano está chegando. E quem estiver na comunidade vai saber
               primeiro.
