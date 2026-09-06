@@ -7,6 +7,7 @@ import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
 import { ChatPanel, ChatBubble, AvatarStack } from "@/components/reline/ChatPanel";
+import CookieBanner from "@/components/reline/CookieBanner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -504,7 +505,13 @@ function Index() {
           <img src={logoAsset.url} alt="Reline" className="inline-block h-5 w-auto align-middle" />{" "}
           • <span className="font-black-novembro">Black Novembro</span> 2026 • Cabelo bonito é couro cabeludo saudável.
         </p>
+        <p className="mx-auto mt-3 max-w-[60ch] text-[0.7rem] leading-[1.6] text-muted-foreground/70">
+          Este site utiliza cookies e trata dados pessoais conforme a Lei Geral de Proteção de Dados
+          (LGPD — Lei nº 13.709/2018). Os dados coletados são usados apenas para comunicação sobre a
+          campanha e podem ser excluídos mediante solicitação.
+        </p>
       </footer>
+      <CookieBanner />
     </div>
   );
 }
