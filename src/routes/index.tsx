@@ -443,8 +443,11 @@ function Index() {
               <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
                 *Ao enviar, você concorda com o uso dos seus dados (nome, WhatsApp e Instagram)
                 exclusivamente para o envio das condições da campanha e contato da Renata Fraga Hair
-                Spa, conforme a LGPD (Lei nº 13.709/2018). Você pode solicitar a exclusão dos seus
-                dados a qualquer momento.
+                Spa, conforme a LGPD (Lei nº 13.709/2018) e a nossa{" "}
+                <Link to="/privacidade" className="underline underline-offset-2 hover:text-rose-lt">
+                  Política de Privacidade
+                </Link>
+                . Você pode solicitar a exclusão dos seus dados a qualquer momento.
               </p>
             </div>
           ) : (
