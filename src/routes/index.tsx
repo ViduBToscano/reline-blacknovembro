@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
+import woman1Asset from "@/assets/woman-1.jpg.asset.json";
+import woman2Asset from "@/assets/woman-2.jpg.asset.json";
+import woman3Asset from "@/assets/woman-3.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
 import { ChatPanel, ChatBubble, AvatarStack } from "@/components/reline/ChatPanel";
@@ -319,8 +322,8 @@ function Index() {
                 Hoje tem uma condição nova liberada. Corre que é por tempo limitado ✨
               </ChatBubble>
               <AvatarStack
-                avatars={[portraitAsset.url, heroAsset.url, portraitAsset.url]}
-                caption="+4.200 pessoas na comunidade"
+                avatars={[woman1Asset.url, woman2Asset.url, woman3Asset.url]}
+                caption="+ de 1000 pessoas já estão sabendo de tudo em primeira mão!"
               />
             </ChatPanel>
           </Reveal>

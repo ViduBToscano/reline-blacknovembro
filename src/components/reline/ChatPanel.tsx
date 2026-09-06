@@ -5,10 +5,10 @@ export function ChatBubble({ side, children }: { side: "in" | "out"; children: R
   return (
     <div className={`flex ${isIn ? "justify-start" : "justify-end"}`}>
       <p
-        className={`max-w-[85%] px-3.5 py-2.5 text-[0.86rem] leading-snug ${
+        className={`max-w-[85%] px-3.5 py-2.5 text-[0.86rem] leading-snug shadow-sm ${
           isIn
             ? "rounded-[14px_14px_14px_2px] bg-secondary text-card-foreground"
-            : "rounded-[14px_14px_2px_14px] bg-rose-dk/70 text-rose-pale"
+            : "rounded-[14px_14px_2px_14px] bg-cream/92 text-ink"
         }`}
       >
         {children}
