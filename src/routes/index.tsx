@@ -322,8 +322,8 @@ function Index() {
                 Hoje tem uma condição nova liberada. Corre que é por tempo limitado ✨
               </ChatBubble>
               <AvatarStack
-                avatars={[portraitAsset.url, heroAsset.url, portraitAsset.url]}
-                caption="+4.200 pessoas na comunidade"
+                avatars={[woman1Asset.url, woman2Asset.url, woman3Asset.url]}
+                caption="+ de 1000 pessoas já estão sabendo de tudo em primeira mão!"
               />
             </ChatPanel>
           </Reveal>
