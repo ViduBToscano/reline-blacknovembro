@@ -11,13 +11,13 @@ import { ChatPanel, ChatBubble, AvatarStack } from "@/components/reline/ChatPane
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Black de Novembro Reline | Comunidade com acesso antecipado" },
+      { title: "Black Novembro Reline | Comunidade com acesso antecipado" },
       {
         name: "description",
         content:
-          "A Black de Novembro da Reline começa 04.11 com descontos progressivos. Entre na comunidade e saiba das condições antes de todo mundo.",
+          "A Black Novembro da Reline começa 04.11 com descontos progressivos. Entre na comunidade e saiba das condições antes de todo mundo.",
       },
-      { property: "og:title", content: "Black de Novembro Reline" },
+      { property: "og:title", content: "Black Novembro Reline" },
       {
         property: "og:description",
         content:
@@ -106,7 +106,7 @@ function Index() {
     <div className="overflow-x-hidden bg-background text-foreground">
       {/* Top bar */}
       <div className="flex flex-wrap justify-center gap-3.5 border-b border-border bg-ink-2 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[1.44px] text-rose-lt">
-        <span>Black de Novembro Reline</span>
+        <span><span className="font-black-novembro">Black Novembro</span> Reline</span>
         <span className="text-rose/55">•</span>
         <span>Começa 04.11</span>
         <span className="text-rose/55">•</span>
@@ -127,11 +127,11 @@ function Index() {
         <div className="container-page relative py-20">
           <div className="max-w-[620px]">
             <img src={logoAsset.url} alt="Reline" className="mb-6 h-8 w-auto" />
-            <h1 className="text-metal m-0 text-[clamp(4rem,9.5vw,8.5rem)] font-extrabold leading-[0.86] tracking-[-0.03em]">
+            <h1 className="font-black-novembro text-metal m-0 text-[clamp(4rem,9.5vw,8.5rem)] font-bold leading-[0.86]">
               BLACK
             </h1>
-            <p className="mb-8 mt-1 text-[clamp(1.6rem,3.6vw,2.8rem)] font-extrabold italic leading-[1.1] text-rose-pale">
-              de novembro
+            <p className="font-black-novembro mb-8 mt-1 text-[clamp(1.9rem,4.5vw,3.6rem)] font-bold uppercase leading-[1.05] text-rose-pale">
+              novembro
             </p>
             <h2 className="mb-4 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
               A Black mais esperada do ano está chegando. E quem estiver na comunidade vai saber
@@ -193,7 +193,7 @@ function Index() {
               Novembro vai ser diferente. Quanto mais você aproveita, maior pode ser o seu desconto.
             </h2>
             <p className="mb-5 max-w-[60ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              Durante a Black de Novembro, você poderá encontrar{" "}
+              Durante a <span className="font-black-novembro">Black Novembro</span>, você poderá encontrar{" "}
               <strong className="font-extrabold text-rose-lt">descontos progressivos</strong> em
               produtos selecionados da Reline.
             </p>
@@ -305,7 +305,7 @@ function Index() {
           <Reveal delay={120}>
             <ChatPanel
               avatar={portraitAsset.url}
-              title="Reline • Black de Novembro"
+              title="Reline • Black Novembro"
               subtitle="Comunidade no WhatsApp"
             >
               <ChatBubble side="in">
@@ -445,7 +445,7 @@ function Index() {
                 Você está dentro!
               </h2>
               <p className="mx-auto mb-9 max-w-[40ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/80">
-                Agora entre na nossa comunidade para receber as condições da Black de Novembro em
+                Agora entre na nossa comunidade para receber as condições da <span className="font-black-novembro">Black Novembro</span> em
                 primeira mão.
               </p>
               <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
@@ -471,8 +471,8 @@ function Index() {
           <span className="mb-8 inline-block rounded-[47px] border border-border px-6 py-2 text-[0.66rem] font-bold uppercase tracking-[2.82px] text-rose-lt">
             04 de novembro
           </span>
-          <h2 className="text-metal mb-1 text-[clamp(2rem,6.5vw,4rem)] font-extrabold leading-[1.05] tracking-[-0.02em]">
-            Black de Novembro
+          <h2 className="font-black-novembro text-metal mb-1 text-[clamp(2rem,6.5vw,4rem)] font-bold leading-[1.05]">
+            Black Novembro
           </h2>
           <p className="mb-8 text-[clamp(1.4rem,3vw,2.2rem)] font-extrabold italic leading-[1.1] text-card-foreground">
             Reline
@@ -497,7 +497,7 @@ function Index() {
         </strong>
         <p className="text-[0.78rem] leading-[1.7] text-muted-foreground">
           <img src={logoAsset.url} alt="Reline" className="inline-block h-5 w-auto align-middle" />{" "}
-          • Black de Novembro 2026 • Cabelo bonito é couro cabeludo saudável.
+          • <span className="font-black-novembro">Black Novembro</span> 2026 • Cabelo bonito é couro cabeludo saudável.
         </p>
       </footer>
     </div>

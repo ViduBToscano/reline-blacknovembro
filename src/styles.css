@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Reline — Black de Novembro design system.
+ * Reline — Black Novembro design system.
  * Dark charcoal base with rose-copper metallic accents and warm cream sections.
  * All colors are oklch tokens; never hardcode colors in components.
  */
@@ -200,6 +200,12 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: var(--rose-lt);
+}
+
+@utility font-black-novembro {
+  font-family: "Benton Modern D", "Benton Modern Display", "Benton Modern", Georgia, serif;
+  font-style: normal;
+  letter-spacing: 0;
 }
 
 @utility btn-cta {
