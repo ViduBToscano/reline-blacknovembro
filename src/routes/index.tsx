@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   Dialog,
@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { submitLead } from "@/lib/leads.functions";
+import { submitLead, trackEvent } from "@/lib/leads.functions";
 
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
@@ -517,6 +517,7 @@ function Index() {
       {/* Cadastro */}
       <section
         id="cadastro"
+        ref={formRef}
         className="relative overflow-hidden px-5 py-[5.5rem]"
         style={{ background: "var(--grad-panel-c)" }}
       >
@@ -612,9 +613,11 @@ function Index() {
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 flex justify-center">
-            <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
-              Entrar na comunidade
-            </WhatsAppButton>
+            <span onClick={() => track("community_click")}>
+              <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
+                Entrar na comunidade
+              </WhatsAppButton>
+            </span>
           </div>
         </DialogContent>
       </Dialog>
