@@ -127,10 +127,10 @@ function Index() {
         <div className="container-page relative py-20">
           <div className="max-w-[620px]">
             <img src={logoAsset.url} alt="Reline" className="mb-6 h-8 w-auto" />
-            <h1 className="font-black-novembro text-metal m-0 text-[clamp(4rem,9.5vw,8.5rem)] font-bold leading-[0.86]">
+            <h1 className="font-black-novembro text-metal m-0 text-[clamp(4rem,9.5vw,8.5rem)] leading-[0.86]">
               BLACK
             </h1>
-            <p className="font-black-novembro mb-8 mt-1 text-[clamp(1.9rem,4.5vw,3.6rem)] font-bold uppercase leading-[1.05] text-rose-pale">
+            <p className="font-black-novembro mb-8 mt-1 text-[clamp(1.9rem,4.5vw,3.6rem)] uppercase leading-[1.05] text-rose-pale">
               novembro
             </p>
             <h2 className="mb-4 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
@@ -381,7 +381,7 @@ function Index() {
             <div>
               <span className="eyebrow mb-5 text-rose">Acesso antecipado</span>
               <h2 className="mb-4 text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.15] text-card-foreground">
-                Quero entrar na <em className="italic text-rose-lt">Black</em>
+                Quero entrar na <em className="font-black-novembro text-rose-lt">Black</em>
               </h2>
               <p className="mx-auto mb-10 max-w-[46ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/75">
                 Preencha seus dados e receba o acesso à comunidade onde as condições são reveladas
@@ -471,7 +471,7 @@ function Index() {
           <span className="mb-8 inline-block rounded-[47px] border border-border px-6 py-2 text-[0.66rem] font-bold uppercase tracking-[2.82px] text-rose-lt">
             04 de novembro
           </span>
-          <h2 className="font-black-novembro text-metal mb-1 text-[clamp(2rem,6.5vw,4rem)] font-bold leading-[1.05]">
+          <h2 className="font-black-novembro text-metal mb-1 text-[clamp(2rem,6.5vw,4rem)] leading-[1.05]">
             Black Novembro
           </h2>
           <p className="mb-8 text-[clamp(1.4rem,3vw,2.2rem)] font-extrabold italic leading-[1.1] text-card-foreground">

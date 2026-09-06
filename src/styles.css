@@ -204,7 +204,8 @@
 
 @utility font-black-novembro {
   font-family: "Benton Modern D", "Benton Modern Display", "Benton Modern", Georgia, serif;
-  font-style: normal;
+  font-style: italic;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
