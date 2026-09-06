@@ -498,16 +498,23 @@ function Index() {
             </div>
 
             <div className="mt-10 border-t border-cocoa/20 pt-8">
-              <p className="font-black-novembro mb-4 text-[clamp(1.5rem,3vw,2.1rem)] uppercase leading-[1.1] text-cocoa">
+              <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[2.8px] text-graphite">
                 Black Novembro Reline
               </p>
-              <p className="mb-7 text-[1.05rem] font-semibold leading-[1.8] text-graphite">
-                Descontos progressivos.
-                <br />
-                Condições especiais.
-                <br />
-                E muitas surpresas.
-              </p>
+              <ul className="mb-7 space-y-2 text-[1rem] font-normal leading-[1.7] text-graphite">
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-0.5 shrink-0 text-cocoa">✓</span>
+                  <span>Descontos progressivos.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-0.5 shrink-0 text-cocoa">✓</span>
+                  <span>Condições especiais.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-0.5 shrink-0 text-cocoa">✓</span>
+                  <span>E muitas surpresas.</span>
+                </li>
+              </ul>
               <WhatsAppButton href="#cadastro">Entrar na comunidade</WhatsAppButton>
             </div>
           </Reveal>
