@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 const KEY = "reline-lgpd-consent";
 
@@ -13,9 +14,9 @@ export default function CookieBanner() {
     }
   }, []);
 
-  const accept = () => {
+  const choose = (value: string) => {
     try {
-      localStorage.setItem(KEY, "accepted");
+      localStorage.setItem(KEY, value);
     } catch {}
     setVisible(false);
   };
@@ -25,22 +26,44 @@ export default function CookieBanner() {
   return (
     <div
       role="dialog"
-      aria-label="Aviso de privacidade e cookies"
-      className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4"
+      aria-label="Aviso de cookies e privacidade"
+      className="fixed inset-x-0 bottom-0 z-50 px-3 pb-3 sm:px-6 sm:pb-5"
     >
-      <div className="mx-auto flex max-w-[720px] flex-col gap-4 rounded-2xl border border-border bg-ink-2/95 p-5 shadow-2xl backdrop-blur-sm sm:flex-row sm:items-center">
-        <p className="text-[0.82rem] leading-[1.6] text-foreground/80">
-          <strong className="text-rose-lt">Privacidade (LGPD):</strong> usamos cookies e os dados
-          informados nesta página apenas para oferecer acesso às condições da Black Novembro e
-          melhorar sua experiência, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).
+      <div className="mx-auto flex max-w-[980px] flex-col gap-4 rounded-[28px] bg-cream-lt p-5 text-ink shadow-2xl sm:rounded-full sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:py-4 sm:pl-7 sm:pr-4">
+        <p className="text-[0.84rem] leading-[1.6] text-ink/75">
+          Usamos cookies essenciais para o funcionamento do site e, com o seu aceite, cookies de
+          medição de audiência. Saiba mais na{" "}
+          <Link
+            to="/cookies"
+            className="font-semibold text-ink underline underline-offset-2 hover:text-rose-dk"
+          >
+            Política de Cookies
+          </Link>{" "}
+          e na{" "}
+          <Link
+            to="/privacidade"
+            className="font-semibold text-ink underline underline-offset-2 hover:text-rose-dk"
+          >
+            Política de Privacidade
+          </Link>
+          .
         </p>
-        <button
-          type="button"
-          onClick={accept}
-          className="btn-cta shrink-0 px-6 py-3 text-[0.8rem]"
-        >
-          Aceitar
-        </button>
+        <div className="flex shrink-0 items-center gap-3">
+          <button
+            type="button"
+            onClick={() => choose("rejected")}
+            className="rounded-full border border-ink/25 bg-transparent px-7 py-3 text-[0.78rem] font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink/5"
+          >
+            Rejeitar
+          </button>
+          <button
+            type="button"
+            onClick={() => choose("accepted")}
+            className="rounded-full bg-ink px-7 py-3 text-[0.78rem] font-bold uppercase tracking-wide text-cream-lt transition-transform hover:-translate-y-0.5"
+          >
+            Aceitar
+          </button>
+        </div>
       </div>
     </div>
   );
