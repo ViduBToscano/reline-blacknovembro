@@ -16,9 +16,9 @@ export const Route = createFileRoute("/privacidade")({
           "Saiba como a Reline Cosméticos coleta, usa e protege seus dados pessoais, conforme a LGPD (Lei nº 13.709/2018).",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/privacidade" },
+      { property: "og:url", content: "https://reline-blacknovembro.lovable.app/privacidade" },
     ],
-    links: [{ rel: "canonical", href: "/privacidade" }],
+    links: [{ rel: "canonical", href: "https://reline-blacknovembro.lovable.app/privacidade" }],
   }),
   component: PrivacidadePage,
 });
