@@ -126,7 +126,7 @@ function Index() {
         <div className="grain" aria-hidden="true" />
         <div className="container-page relative py-20">
           <div className="max-w-[620px]">
-            <span className="eyebrow mb-6 text-rose">Reline Cosméticos</span>
+            <img src={logoAsset.url} alt="Reline" className="mb-6 h-8 w-auto" />
             <h1 className="text-metal m-0 text-[clamp(4rem,9.5vw,8.5rem)] font-extrabold leading-[0.86] tracking-[-0.03em]">
               BLACK
             </h1>
@@ -496,7 +496,8 @@ function Index() {
           Renata Fraga Hair Spa
         </strong>
         <p className="text-[0.78rem] leading-[1.7] text-muted-foreground">
-          Reline Cosméticos • Black de Novembro 2026 • Cabelo bonito é couro cabeludo saudável.
+          <img src={logoAsset.url} alt="Reline" className="inline-block h-5 w-auto align-middle" />{" "}
+          • Black de Novembro 2026 • Cabelo bonito é couro cabeludo saudável.
         </p>
       </footer>
     </div>
