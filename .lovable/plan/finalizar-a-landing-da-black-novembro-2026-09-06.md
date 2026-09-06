@@ -42,6 +42,7 @@ Sai a seção de fechamento com "Black Novembro / Reline" e o botão verde antes
 - Adicionar dados estruturados de evento (nome, data de início 04/11, organizador, link), que você poderá atualizar depois com a data e o link definitivos.
 - Manter uma única H1 e revisar hierarquia de títulos e textos alternativos das imagens.
 - Atualizar `robots.txt` (bloqueando `/painel`) e criar o sitemap com as páginas públicas: home, privacidade e cookies.
+- conectar ao google search console para conferir a publicação e SEO da página. 
 - Publicar o site ao final.
 
 Sobre conferir no Google: consigo verificar que o título e a descrição estão corretos na página publicada e no que o Google lê, mas a exibição nos resultados de busca depende do rastreamento do Google, que costuma levar de alguns dias a semanas após a publicação. Não é algo que eu consiga forçar no mesmo dia.
