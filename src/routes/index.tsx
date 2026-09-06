@@ -143,10 +143,48 @@ function useCountdown() {
 
 function Index() {
   const clock = useCountdown();
+  const enviarLead = useServerFn(submitLead);
   const [nome, setNome] = useState("");
   const [zap, setZap] = useState("");
   const [insta, setInsta] = useState("");
+  const [erro, setErro] = useState("");
+  const [enviando, setEnviando] = useState(false);
   const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErro("");
+
+    if (nome.trim().length < 2) {
+      setErro("Por favor, informe seu nome.");
+      return;
+    }
+    const zapLimpo = zap.replace(/\D/g, "");
+    if (zapLimpo.length < 10 || zapLimpo.length > 13) {
+      setErro("Informe um WhatsApp válido com DDD.");
+      return;
+    }
+
+    setEnviando(true);
+    try {
+      const res = await enviarLead({
+        data: {
+          nome: nome.trim().slice(0, 100),
+          whatsapp: zap.trim().slice(0, 25),
+          instagram: insta.trim().slice(0, 60),
+        },
+      });
+      if (!res.ok) {
+        setErro("Não conseguimos enviar agora. Tente novamente em instantes.");
+        return;
+      }
+      setSent(true);
+    } catch {
+      setErro("Não conseguimos enviar agora. Tente novamente em instantes.");
+    } finally {
+      setEnviando(false);
+    }
+  };
 
   return (
     <div className="overflow-x-hidden bg-background text-foreground">
@@ -384,7 +422,7 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <span className="eyebrow mb-4 text-cocoa">Linha Reline</span>
+            
             <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
               Seu cabelo merece uma Black à altura.
             </h2>
@@ -406,6 +444,20 @@ function Index() {
                 </span>
               ))}
             </div>
+
+            <div className="mt-10 border-t border-cocoa/20 pt-8">
+              <p className="font-black-novembro mb-4 text-[clamp(1.5rem,3vw,2.1rem)] uppercase leading-[1.1] text-cocoa">
+                Black Novembro Reline
+              </p>
+              <p className="mb-7 text-[1.05rem] font-semibold leading-[1.8] text-graphite">
+                Descontos progressivos.
+                <br />
+                Condições especiais.
+                <br />
+                E muitas surpresas.
+              </p>
+              <WhatsAppButton href="#cadastro">Entrar na comunidade</WhatsAppButton>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -423,125 +475,98 @@ function Index() {
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-[620px] text-center">
-          {!sent ? (
-            <div>
-              <span className="eyebrow mb-5 text-rose">Acesso antecipado</span>
-              <h2 className="mb-4 text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.15] text-card-foreground">
-                Quero entrar na <em className="font-black-novembro text-rose-lt">Black</em>
-              </h2>
-              <p className="mx-auto mb-10 max-w-[46ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/75">
-                Preencha seus dados e receba o acesso à comunidade onde as condições são reveladas
-                primeiro.
-              </p>
-              <form
-                className="flex flex-col gap-3.5 text-left"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-              >
-                <label className="flex flex-col gap-2">
-                  <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-rose-lt/80">
-                    Nome
-                  </span>
-                  <input
-                    type="text"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    placeholder="Seu nome completo"
-                    className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
-                  />
-                </label>
-                <label className="flex flex-col gap-2">
-                  <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-rose-lt/80">
-                    WhatsApp
-                  </span>
-                  <input
-                    type="tel"
-                    value={zap}
-                    onChange={(e) => setZap(e.target.value)}
-                    placeholder="(11) 99999-9999"
-                    className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
-                  />
-                </label>
-                <label className="flex flex-col gap-2">
-                  <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-rose-lt/80">
-                    Instagram
-                  </span>
-                  <input
-                    type="text"
-                    value={insta}
-                    onChange={(e) => setInsta(e.target.value)}
-                    placeholder="@seuperfil"
-                    className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
-                  />
-                </label>
-                <button type="submit" className="btn-cta mt-2.5">
-                  Quero receber o acesso
-                </button>
-              </form>
-              <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
-                *Ao enviar, você concorda com o uso dos seus dados (nome, WhatsApp e Instagram)
-                exclusivamente para o envio das condições da campanha e contato da Renata Fraga Hair
-                Spa, conforme a LGPD (Lei nº 13.709/2018) e a nossa{" "}
-                <Link to="/privacidade" className="underline underline-offset-2 hover:text-rose-lt">
-                  Política de Privacidade
-                </Link>
-                . Você pode solicitar a exclusão dos seus dados a qualquer momento.
-              </p>
-            </div>
-          ) : (
-            <div className="rounded-3xl border border-border bg-ink-2/70 px-8 py-14">
-              <span className="mb-4 block text-[2rem]">🎉</span>
-              <h2 className="mb-4 text-[clamp(1.8rem,4vw,2.6rem)] font-extrabold leading-[1.15] text-rose-pale">
-                Você está dentro!
-              </h2>
-              <p className="mx-auto mb-9 max-w-[40ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/80">
-                Agora entre na nossa comunidade para receber as condições da <span className="font-black-novembro">Black Novembro</span> em
-                primeira mão.
-              </p>
-              <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
-                Entrar na comunidade
-              </WhatsAppButton>
-            </div>
-          )}
+          <div>
+            <span className="eyebrow mb-5 text-rose">Acesso antecipado</span>
+            <h2 className="mb-4 text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.15] text-card-foreground">
+              Quero entrar na{" "}
+              <em className="font-black-novembro text-rose-lt">Black Novembro</em>
+            </h2>
+            <p className="mx-auto mb-10 max-w-[46ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/75">
+              Preencha seus dados e receba o acesso à comunidade onde as condições são reveladas
+              primeiro.
+            </p>
+            <form className="flex flex-col gap-3.5 text-left" onSubmit={handleSubmit} noValidate>
+              <label className="flex flex-col gap-2">
+                <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-rose-lt/80">
+                  Nome
+                </span>
+                <input
+                  type="text"
+                  value={nome}
+                  maxLength={100}
+                  onChange={(e) => setNome(e.target.value)}
+                  placeholder="Seu nome completo"
+                  className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
+                />
+              </label>
+              <label className="flex flex-col gap-2">
+                <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-rose-lt/80">
+                  WhatsApp
+                </span>
+                <input
+                  type="tel"
+                  value={zap}
+                  maxLength={25}
+                  onChange={(e) => setZap(e.target.value)}
+                  placeholder="(11) 99999-9999"
+                  className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
+                />
+              </label>
+              <label className="flex flex-col gap-2">
+                <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-rose-lt/80">
+                  Instagram
+                </span>
+                <input
+                  type="text"
+                  value={insta}
+                  maxLength={60}
+                  onChange={(e) => setInsta(e.target.value)}
+                  placeholder="@seuperfil"
+                  className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
+                />
+              </label>
+              {erro && (
+                <p role="alert" className="text-[0.85rem] font-semibold text-rose-lt">
+                  {erro}
+                </p>
+              )}
+              <button type="submit" className="btn-cta mt-2.5" disabled={enviando}>
+                {enviando ? "Enviando…" : "Quero receber o acesso"}
+              </button>
+            </form>
+            <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
+              *Ao enviar, você concorda com o uso dos seus dados (nome, WhatsApp e Instagram)
+              exclusivamente para o envio das condições da campanha e contato da Renata Fraga Hair
+              Spa, conforme a LGPD (Lei nº 13.709/2018) e a nossa{" "}
+              <Link to="/privacidade" className="underline underline-offset-2 hover:text-rose-lt">
+                Política de Privacidade
+              </Link>
+              . Você pode solicitar a exclusão dos seus dados a qualquer momento.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Fechamento */}
-      <section
-        className="relative overflow-hidden px-5 py-28"
-        style={{ background: "var(--grad-panel-b)" }}
-      >
-        <div className="grain" aria-hidden="true" />
-        <div
-          className="absolute -bottom-[22vw] left-1/2 h-[62vw] w-[62vw] -translate-x-1/2"
-          style={{ background: "var(--glow-rose)" }}
-          aria-hidden="true"
-        />
-        <Reveal className="relative mx-auto max-w-[780px] text-center">
-          <span className="mb-8 inline-block rounded-[47px] border border-border px-6 py-2 text-[0.66rem] font-bold uppercase tracking-[2.82px] text-rose-lt">
-            04 de novembro
-          </span>
-          <h2 className="font-black-novembro text-metal mb-1 text-[clamp(2rem,6.5vw,4rem)] leading-[1.05]">
-            Black Novembro
-          </h2>
-          <p className="mb-8 text-[clamp(1.4rem,3vw,2.2rem)] font-extrabold italic leading-[1.1] text-card-foreground">
-            Reline
-          </p>
-          <div
-            className="mx-auto mb-8 h-px w-[220px]"
-            style={{ background: "var(--hairline-rose)" }}
-          />
-          <p className="mx-auto mb-10 max-w-[46ch] text-pretty text-[1.15rem] leading-[1.7] text-foreground/85">
-            Descontos progressivos. Condições especiais. E muitas surpresas. Agora é o momento de se
-            preparar.
-          </p>
-          <WhatsAppButton href="#cadastro" size="lg">
-            Entrar na comunidade 💚
-          </WhatsAppButton>
-        </Reveal>
-      </section>
+      <Dialog open={sent} onOpenChange={setSent}>
+        <DialogContent className="border-border bg-ink-2 text-center sm:max-w-[460px]">
+          <DialogHeader>
+            <span className="mb-1 block text-[2rem]">🎉</span>
+            <DialogTitle className="text-center text-[clamp(1.5rem,4vw,2rem)] font-extrabold leading-[1.15] text-rose-pale">
+              Você está dentro!
+            </DialogTitle>
+            <DialogDescription className="mx-auto max-w-[36ch] text-pretty text-center text-[1rem] leading-[1.7] text-foreground/80">
+              Agora entre na nossa comunidade para receber as condições da{" "}
+              <span className="font-black-novembro">Black Novembro</span> em primeira mão.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 flex justify-center">
+            <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
+              Entrar na comunidade
+            </WhatsAppButton>
+          </div>
+        </DialogContent>
+      </Dialog>
+
 
       <footer className="border-t border-border bg-background px-5 py-10 text-center">
         <img
