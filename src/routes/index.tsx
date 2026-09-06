@@ -7,6 +7,7 @@ import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
 import { ChatPanel, ChatBubble, AvatarStack } from "@/components/reline/ChatPanel";
+import CookieBanner from "@/components/reline/CookieBanner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -72,7 +73,7 @@ function targetDate() {
 }
 
 function useCountdown() {
-  const [t, setT] = useState({ days: 0, hours: 0, mins: 0 });
+  const [t, setT] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
 
   useEffect(() => {
     const tick = () => {
@@ -81,10 +82,11 @@ function useCountdown() {
         days: Math.floor(ms / 86400000),
         hours: Math.floor(ms / 3600000) % 24,
         mins: Math.floor(ms / 60000) % 60,
+        secs: Math.floor(ms / 1000) % 60,
       });
     };
     tick();
-    const id = setInterval(tick, 30000);
+    const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, []);
 
@@ -92,6 +94,7 @@ function useCountdown() {
     { k: "dias", v: pad(t.days) },
     { k: "horas", v: pad(t.hours) },
     { k: "min", v: pad(t.mins) },
+    { k: "seg", v: pad(t.secs) },
   ];
 }
 
@@ -434,8 +437,11 @@ function Index() {
                   Quero receber o acesso
                 </button>
               </form>
-              <p className="mt-5 text-[0.78rem] text-muted-foreground">
-                *Seus dados são usados apenas para o envio das condições da campanha.
+              <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
+                *Ao enviar, você concorda com o uso dos seus dados (nome, WhatsApp e Instagram)
+                exclusivamente para o envio das condições da campanha e contato da Renata Fraga Hair
+                Spa, conforme a LGPD (Lei nº 13.709/2018). Você pode solicitar a exclusão dos seus
+                dados a qualquer momento.
               </p>
             </div>
           ) : (
@@ -499,7 +505,13 @@ function Index() {
           <img src={logoAsset.url} alt="Reline" className="inline-block h-5 w-auto align-middle" />{" "}
           • <span className="font-black-novembro">Black Novembro</span> 2026 • Cabelo bonito é couro cabeludo saudável.
         </p>
+        <p className="mx-auto mt-3 max-w-[60ch] text-[0.7rem] leading-[1.6] text-muted-foreground/70">
+          Este site utiliza cookies e trata dados pessoais conforme a Lei Geral de Proteção de Dados
+          (LGPD — Lei nº 13.709/2018). Os dados coletados são usados apenas para comunicação sobre a
+          campanha e podem ser excluídos mediante solicitação.
+        </p>
       </footer>
+      <CookieBanner />
     </div>
   );
 }
