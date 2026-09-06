@@ -498,17 +498,16 @@ function Index() {
       </section>
 
       <footer className="border-t border-border bg-background px-5 py-10 text-center">
+        <img
+          src={logoAsset.url}
+          alt="Reline"
+          className="mx-auto mb-3 h-6 w-auto opacity-90"
+        />
         <strong className="mb-2 block text-base font-extrabold tracking-[0.04em] text-rose-lt">
           Renata Fraga Hair Spa
         </strong>
         <p className="text-[0.78rem] leading-[1.7] text-muted-foreground">
-          <img src={logoAsset.url} alt="Reline" className="inline-block h-5 w-auto align-middle" />{" "}
-          • <span className="font-black-novembro">Black Novembro</span> 2026 • Cabelo bonito é couro cabeludo saudável.
-        </p>
-        <p className="mx-auto mt-3 max-w-[60ch] text-[0.7rem] leading-[1.6] text-muted-foreground/70">
-          Este site utiliza cookies e trata dados pessoais conforme a Lei Geral de Proteção de Dados
-          (LGPD — Lei nº 13.709/2018). Os dados coletados são usados apenas para comunicação sobre a
-          campanha e podem ser excluídos mediante solicitação.
+          Black Novembro 2026
         </p>
       </footer>
       <CookieBanner />
