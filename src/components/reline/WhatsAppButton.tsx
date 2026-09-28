@@ -13,13 +13,15 @@ export function WhatsAppButton({
   href,
   children,
   size = "md",
+  onClick,
 }: {
   href: string;
   children: ReactNode;
   size?: "md" | "lg";
+  onClick?: () => void;
 }) {
   return (
-    <a href={href} className={`btn-whatsapp ${size === "lg" ? "btn-whatsapp-lg" : ""}`}>
+    <a href={href} onClick={onClick} className={`btn-whatsapp ${size === "lg" ? "btn-whatsapp-lg" : ""}`}>
       <WhatsAppIcon />
       {children}
     </a>
