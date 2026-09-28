@@ -29,13 +29,13 @@ const EVENT_URL = "https://reline-blacknovembro.lovable.app/";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Black Novembro Reline 2026 | Descontos progressivos a partir de 04.11" },
+      { title: "Black November Reline 2026 | Descontos progressivos a partir de 04.11" },
       {
         name: "description",
         content:
-          "A Black Novembro da Reline começa em 04 de novembro com descontos progressivos em produtos de nutrição, reconstrução, hidratação e finalização. Entre na comunidade e saiba das condições antes de todo mundo.",
+          "A Black November da Reline começa em 04 de novembro com descontos progressivos em produtos de nutrição, reconstrução, hidratação e finalização. Entre na comunidade e saiba das condições antes de todo mundo.",
       },
-      { property: "og:title", content: "Black Novembro Reline 2026" },
+      { property: "og:title", content: "Black November Reline 2026" },
       {
         property: "og:description",
         content:
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: EVENT_URL },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Black Novembro Reline 2026" },
+      { name: "twitter:title", content: "Black November Reline 2026" },
       {
         name: "twitter:description",
         content:
@@ -59,9 +59,9 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SaleEvent",
-          name: "Black Novembro Reline 2026",
+          name: "Black November Reline 2026",
           description:
-            "Campanha Black Novembro da Reline com descontos progressivos em produtos para nutrição, reconstrução, hidratação e finalização dos cabelos.",
+            "Campanha Black November da Reline com descontos progressivos em produtos para nutrição, reconstrução, hidratação e finalização dos cabelos.",
           startDate: EVENT_START,
           endDate: EVENT_END,
           eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
@@ -232,7 +232,7 @@ function Index() {
     <div className="overflow-x-hidden bg-background text-foreground">
       {/* Top bar */}
       <div className="flex flex-wrap justify-center gap-3.5 border-b border-border bg-ink-2 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[1.44px] text-rose-lt">
-        <span>Black Novembro Reline</span>
+        <span>Black November Reline</span>
         <span className="text-rose/55">•</span>
         <span>Começa 04.11</span>
         <span className="text-rose/55">•</span>
@@ -254,7 +254,7 @@ function Index() {
           <div className="max-w-[620px]">
             <img src={logoAsset.url} alt="Reline" className="mb-6 h-8 w-auto" />
             <h1 className="m-0">
-              <span className="sr-only">Black Novembro Reline 2026</span>
+              <span className="sr-only">Black November Reline 2026</span>
               <span
                 aria-hidden="true"
                 className="font-black-novembro text-metal block text-[clamp(4rem,9.5vw,8.5rem)] leading-[0.86]"
@@ -269,14 +269,18 @@ function Index() {
               </span>
             </h1>
 
-            <h2 className="mb-4 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
-              A Black mais esperada do ano está chegando. E quem estiver na comunidade vai saber
-              primeiro.
+            <h2 className="mb-3 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
+              Um mês de oportunidades extraordinárias.
             </h2>
+            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
+              Seu ritual de cuidado capilar com condições especiais.
+            </p>
+            <p className="mb-2 text-[1.4rem] font-extrabold uppercase tracking-[0.05em] text-rose-pale">
+              Até 80% off.
+            </p>
             <p className="mb-9 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              A partir de <strong className="font-extrabold text-rose-lt">04 de novembro</strong>, a
-              Reline preparou uma Black especial com descontos progressivos para você cuidar dos
-              seus cabelos e aproveitar condições que não estarão disponíveis o ano todo.
+              Em produtos selecionados, condições especiais e descontos progressivos de até 30% off.
+              Muito mais motivos para cuidar dos seus cabelos.
             </p>
 
             <div className="mb-9 flex flex-wrap items-stretch gap-2.5">
@@ -302,7 +306,7 @@ function Index() {
             </div>
 
             <WhatsAppButton href="#cadastro" size="lg">
-              Quero entrar na comunidade
+              Aproveitar a Black November
             </WhatsAppButton>
             <p className="mt-4 text-[0.78rem] text-muted-foreground">
               *Participação limitada à comunidade. Sem custo para entrar.
