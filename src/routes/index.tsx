@@ -328,29 +328,23 @@ function Index() {
         />
         <div className="container-page relative grid items-center gap-20 [grid-template-columns:repeat(auto-fit,minmax(340px,1fr))]">
           <Reveal>
-            <span className="eyebrow mb-4 text-rose">A campanha</span>
+            <span className="eyebrow mb-4 text-rose">Descontos progressivos</span>
             <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
-              Novembro vai ser diferente. Quanto mais você aproveita, maior pode ser o seu desconto.
+              Quanto mais você cuida, mais você economiza.
             </h2>
             <p className="mb-5 max-w-[60ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              Durante a <span className="font-black-novembro">Black Novembro</span>, você poderá encontrar{" "}
-              <strong className="font-extrabold text-rose-lt">descontos progressivos</strong> em
-              produtos selecionados da Reline.
+              Monte seu ritual Reline e aproveite os descontos progressivos da{" "}
+              <span className="font-black-novembro">Black November</span>.
             </p>
-            <p className="mb-8 max-w-[60ch] text-pretty leading-[1.75] text-foreground/70">
-              Uma oportunidade para montar seu cronograma, repor seus produtos favoritos ou
-              finalmente experimentar aquele tratamento que está na sua lista.
+            <p className="mb-3 text-[1.5rem] font-extrabold uppercase tracking-[0.05em] text-rose-pale">
+              Até 30% off
             </p>
-            <div className="rounded-r-xl border border-l-[3px] border-border border-l-rose bg-rose/10 px-6 py-5">
-              <span className="eyebrow mb-2 text-[0.68rem] font-extrabold tracking-[0.16em] text-rose">
-                Mas atenção
-              </span>
-              <p className="leading-[1.65] text-card-foreground">
-                As condições serão reveladas{" "}
-                <strong className="font-extrabold text-rose-pale">primeiro</strong> para quem
-                estiver na comunidade.
-              </p>
-            </div>
+            <ul className="mb-8 space-y-1.5 text-[1.05rem] leading-[1.7] text-foreground/80">
+              <li>Escolha seus produtos.</li>
+              <li>Combine seus favoritos.</li>
+              <li>Cuide mais. Economize mais.</li>
+            </ul>
+            <WhatsAppButton href="#cadastro">Conferir ofertas</WhatsAppButton>
           </Reveal>
 
           <Reveal delay={120}>
@@ -445,7 +439,7 @@ function Index() {
           <Reveal delay={120}>
             <ChatPanel
               avatar={portraitAsset.url}
-              title="Reline • Black Novembro"
+              title="Reline • Black November"
               subtitle="Comunidade no WhatsApp"
             >
               <ChatBubble side="in">
@@ -480,15 +474,17 @@ function Index() {
           <Reveal delay={120}>
             
             <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
-              Seu cabelo merece uma Black à altura.
+              Cuidado que entende o seu cabelo.
             </h2>
-            <p className="mb-7 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
-              Produtos pensados para diferentes necessidades dos fios, da{" "}
-              <strong className="font-extrabold text-cocoa">nutrição à reconstrução</strong>,
-              hidratação e finalização.
+            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+              A Reline une{" "}
+              <strong className="font-extrabold text-cocoa">tratamento, pesquisa e conhecimento</strong>{" "}
+              para cuidar dos fios de forma completa.
             </p>
-            <p className="mb-8 text-[1.05rem] font-semibold leading-[1.75] text-graphite">
-              Agora é o momento de se preparar.
+            <p className="mb-8 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+              Produtos desenvolvidos para diferentes necessidades, da nutrição à reconstrução, com
+              foco em{" "}
+              <strong className="font-extrabold text-cocoa">saúde, força e beleza dos cabelos</strong>.
             </p>
             <div className="flex flex-wrap gap-2.5">
               {NEEDS.map((need) => (
@@ -503,7 +499,7 @@ function Index() {
 
             <div className="mt-10 border-t border-cocoa/20 pt-8">
               <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[2.8px] text-graphite">
-                Black Novembro Reline
+                Black November Reline
               </p>
               <ul className="mb-7 space-y-2 text-[1rem] font-normal leading-[1.7] text-graphite">
                 <li className="flex items-start gap-2.5">
@@ -540,14 +536,14 @@ function Index() {
         />
         <div className="relative mx-auto max-w-[620px] text-center">
           <div>
-            <span className="eyebrow mb-5 text-rose">Acesso antecipado</span>
+            <span className="eyebrow mb-5 text-rose">Black November Reline</span>
             <h2 className="mb-4 text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.15] text-card-foreground">
-              Quero entrar na{" "}
-              <em className="font-black-novembro text-rose-lt">Black Novembro</em>
+              É hora de cuidar do seu cabelo.
             </h2>
             <p className="mx-auto mb-10 max-w-[46ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/75">
-              Preencha seus dados e receba o acesso à comunidade onde as condições são reveladas
-              primeiro.
+              A <span className="font-black-novembro text-rose-lt">Black November</span> já começou.
+              Até 80% off em produtos selecionados, condições especiais e descontos progressivos de
+              até 30% off. Preencha seus dados e receba as condições em primeira mão.
             </p>
             <form className="flex flex-col gap-3.5 text-left" onSubmit={handleSubmit} noValidate>
               <label className="flex flex-col gap-2">
@@ -595,7 +591,7 @@ function Index() {
                 </p>
               )}
               <button type="submit" className="btn-cta mt-2.5" disabled={enviando}>
-                {enviando ? "Enviando…" : "Quero receber o acesso"}
+                {enviando ? "Enviando…" : "Quero aproveitar"}
               </button>
             </form>
             <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
@@ -620,7 +616,7 @@ function Index() {
             </DialogTitle>
             <DialogDescription className="mx-auto max-w-[36ch] text-pretty text-center text-[1rem] leading-[1.7] text-foreground/80">
               Agora entre na nossa comunidade para receber as condições da{" "}
-              <span className="font-black-novembro">Black Novembro</span> em primeira mão.
+              <span className="font-black-novembro">Black November</span> em primeira mão.
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 flex justify-center">
@@ -644,7 +640,10 @@ function Index() {
           Renata Fraga Hair Spa
         </strong>
         <p className="text-[0.78rem] leading-[1.7] text-muted-foreground">
-          Black Novembro 2026
+          Black November 2026
+        </p>
+        <p className="mt-1 text-[0.78rem] italic leading-[1.7] text-muted-foreground">
+          Tratamento que transforma o cuidado em resultado.
         </p>
       </footer>
       <CookieBanner />
