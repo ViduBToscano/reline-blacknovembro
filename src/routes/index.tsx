@@ -320,7 +320,7 @@ function Index() {
               <span className="mb-1 block text-[0.72rem] font-bold uppercase tracking-[0.2em] text-rose">
                 Descontos de até
               </span>
-              <span className="font-black-novembro text-metal m-0 block text-[clamp(2.8rem,5.5vw,4.4rem)] uppercase leading-[0.95]">
+              <span className="font-black-novembro text-metal m-0 block px-2 pb-4 pt-2 text-[clamp(2.8rem,5.5vw,4.4rem)] uppercase leading-[1.1] -my-2">
                 30% off
               </span>
             </div>
