@@ -275,6 +275,37 @@
   font-size: 1.08rem;
 }
 
+@media (max-width: 640px) {
+  .btn-whatsapp {
+    width: 100%;
+    padding-inline: 1.25rem;
+    text-align: center;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-right: 0.9rem;
+  white-space: nowrap;
+}
+
 @utility fade-in {
   opacity: 0;
   transform: translateY(28px);

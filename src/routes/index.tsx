@@ -236,12 +236,19 @@ function Index() {
   return (
     <div className="overflow-x-hidden bg-background text-foreground">
       {/* Top bar */}
-      <div className="flex flex-wrap justify-center gap-3.5 border-b border-border bg-ink-2 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[1.44px] text-rose-lt">
-        <span>Black November Reline</span>
-        <span className="text-rose/55">•</span>
-        <span>Começa 04.11</span>
-        <span className="text-rose/55">•</span>
-        <span className="text-rose-pale/75">Quem está na comunidade sabe primeiro</span>
+      <div className="overflow-hidden border-b border-border bg-ink-2 py-3 text-[0.68rem] font-semibold uppercase tracking-[1.44px] text-rose-lt">
+        <div className="marquee-track">
+          {[0, 1].map((i) => (
+            <div key={i} className="marquee-group" aria-hidden={i === 1}>
+              <span>Black November Reline</span>
+              <span className="text-rose/55">•</span>
+              <span>Começa 04.11</span>
+              <span className="text-rose/55">•</span>
+              <span className="text-rose-pale/75">Quem está na comunidade sabe primeiro</span>
+              <span className="text-rose/55">•</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Hero */}
