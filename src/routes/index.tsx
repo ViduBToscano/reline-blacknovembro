@@ -269,46 +269,16 @@ function Index() {
               </span>
             </h1>
 
-            <h2 className="mb-3 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
+            <h2 className="mb-4 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
               Um mês de oportunidades extraordinárias.
             </h2>
-            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              Seu ritual de cuidado capilar com condições especiais.
+            <p className="font-black-novembro text-metal m-0 mb-6 text-[clamp(2.6rem,5vw,4rem)] uppercase leading-[0.95]">
+              Até 80% off
             </p>
-            <div className="mb-5">
-              <span className="mb-1 block text-[0.74rem] font-bold uppercase tracking-[0.24em] text-rose">
-                Até
-              </span>
-              <span className="font-black-novembro text-metal block text-[clamp(3.2rem,6.5vw,5.2rem)] uppercase leading-[0.92]">
-                80% off
-              </span>
-            </div>
-            <p className="mb-9 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              Em produtos selecionados, condições especiais e descontos progressivos de até 30% off.
-              Muito mais motivos para cuidar dos seus cabelos.
+            <p className="mb-9 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
+              Em produtos selecionados, com descontos progressivos e muitas surpresas para quem está
+              na comunidade. Começa 04.11.
             </p>
-
-            <div className="mb-9 flex flex-wrap items-stretch gap-2.5">
-              <div className="mr-1.5 flex flex-none flex-col justify-center border-r border-border py-3.5 pr-6">
-                <span className="eyebrow text-[0.62rem] text-rose">Começa em</span>
-                <strong className="text-[1.9rem] font-extrabold leading-none tracking-[-0.02em] text-rose-pale">
-                  04.11
-                </strong>
-              </div>
-              {clock.map((unit) => (
-                <div
-                  key={unit.k}
-                  className="min-w-[76px] rounded-xl border border-border bg-ink-2/60 px-2 py-3 text-center"
-                >
-                  <strong className="block text-[1.75rem] font-extrabold leading-[1.1] tabular-nums text-card-foreground">
-                    {unit.v}
-                  </strong>
-                  <span className="text-[0.58rem] font-bold uppercase tracking-[0.14em] text-rose-lt/75">
-                    {unit.k}
-                  </span>
-                </div>
-              ))}
-            </div>
 
             <WhatsAppButton href="#cadastro" size="lg">
               Aproveitar a Black November
@@ -331,13 +301,13 @@ function Index() {
           style={{ background: "var(--glow-rose)" }}
           aria-hidden="true"
         />
-        <div className="container-page relative grid items-center gap-20 [grid-template-columns:repeat(auto-fit,minmax(340px,1fr))]">
+        <div className="container-page relative mx-auto max-w-[680px] text-center">
           <Reveal>
             <span className="eyebrow mb-4 text-rose">Descontos progressivos</span>
-            <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
+            <h2 className="mb-5 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
               Quanto mais você cuida, mais você economiza.
             </h2>
-            <p className="mb-5 max-w-[60ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
+            <p className="mx-auto mb-6 max-w-[54ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               Monte seu ritual Reline e aproveite os descontos progressivos da{" "}
               <span className="font-black-novembro">Black November</span>.
             </p>
@@ -345,39 +315,29 @@ function Index() {
               <span className="mb-1 block text-[0.72rem] font-bold uppercase tracking-[0.2em] text-rose">
                 Descontos de até
               </span>
-              <span className="font-black-novembro text-metal block text-[clamp(2.8rem,5.5vw,4.4rem)] uppercase leading-[0.95]">
+              <span className="font-black-novembro text-metal m-0 block text-[clamp(2.8rem,5.5vw,4.4rem)] uppercase leading-[0.95]">
                 30% off
               </span>
             </div>
-            <ul className="mb-8 space-y-1.5 text-[1.05rem] leading-[1.7] text-foreground/80">
-              <li>Escolha seus produtos.</li>
-              <li>Combine seus favoritos.</li>
-              <li>Cuide mais. Economize mais.</li>
-            </ul>
-            <WhatsAppButton href="#cadastro">Conferir ofertas</WhatsAppButton>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="flex flex-col gap-3.5">
-              {LADDER.map((step) => (
-                <div key={step.label} className="flex items-center gap-4">
-                  <span className="w-[92px] flex-shrink-0 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-rose-lt/70">
-                    {step.label}
-                  </span>
-                  <div className="relative h-[46px] flex-1 overflow-hidden rounded-full border border-border bg-white/5">
-                    <div
-                      className="flex h-full items-center justify-end rounded-full px-4"
-                      style={{ background: "var(--grad-bar)", width: step.w }}
-                    >
-                      <span className="font-extrabold text-ink/60">?</span>
-                    </div>
-                  </div>
-                </div>
+            <div className="mb-3 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+              {LADDER.map((step, i) => (
+                <span
+                  key={step.label}
+                  className="flex items-center gap-2.5 text-[1rem] leading-[1.6] text-foreground/85"
+                >
+                  <span
+                    className="h-2.5 w-2.5 rounded-full"
+                    style={{ background: "var(--grad-step-circle)", opacity: 0.4 + i * 0.2 }}
+                  />
+                  {step.label}
+                </span>
               ))}
-              <p className="mt-2 text-[0.8rem] tracking-[0.04em] text-muted-foreground">
-                Percentuais revelados na comunidade a partir de 04.11.
-              </p>
             </div>
+            <p className="mb-8 text-[0.82rem] leading-[1.6] text-muted-foreground">
+              O desconto aumenta a cada produto — percentuais revelados na comunidade a partir de
+              04.11.
+            </p>
+            <WhatsAppButton href="#cadastro">Conferir ofertas</WhatsAppButton>
           </Reveal>
         </div>
       </section>
@@ -531,29 +491,48 @@ function Index() {
         </div>
       </section>
 
-      {/* Banner OFF */}
-      <section
-        className="relative overflow-hidden px-5 py-16"
-        style={{ background: "var(--grad-banner)" }}
-      >
-        <div className="grain" aria-hidden="true" />
+      {/* Banner OFF + contagem */}
+      <section className="relative overflow-hidden bg-cream px-5 py-16">
+        <div
+          className="absolute -top-[22vw] left-1/2 h-[55vw] w-[55vw] -translate-x-1/2"
+          style={{ background: "var(--glow-rose)" }}
+          aria-hidden="true"
+        />
         <div className="container-page relative text-center">
           <Reveal>
-            <span className="eyebrow mb-3 text-ink-deep/75">
-              Black November Reline • começa 04.11
-            </span>
-            <p className="font-black-novembro m-0 text-[clamp(3.4rem,10vw,7.8rem)] uppercase leading-[0.9] text-ink-deep">
+            <span className="eyebrow mb-3 text-cocoa">Black November Reline • começa 04.11</span>
+            <p className="font-black-novembro m-0 text-[clamp(3.4rem,10vw,7.8rem)] uppercase leading-[0.9] text-rose-dk">
               Até 80% off
             </p>
-            <p className="mx-auto mt-4 max-w-[54ch] text-[1.08rem] font-semibold leading-[1.65] text-ink-deep/90">
+            <p className="mx-auto mt-4 max-w-[54ch] text-pretty text-[1.08rem] font-semibold leading-[1.65] text-slate-body">
               Descontos progressivos de até 30% off, condições especiais e muitas surpresas para
               quem está na comunidade.
             </p>
-            <div className="mt-8 flex justify-center">
-              <a
-                href="#cadastro"
-                className="inline-flex items-center gap-2.5 rounded-full bg-ink px-9 py-4 text-[1.02rem] font-extrabold text-cream-lt transition-transform duration-200 hover:-translate-y-0.5"
-              >
+            <div className="mb-9 mt-8 flex flex-wrap items-stretch justify-center gap-2.5">
+              <div className="mr-1.5 flex flex-none flex-col justify-center border-r border-cocoa/25 py-3 pr-6 text-left">
+                <span className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-rose-dk">
+                  Começa em
+                </span>
+                <strong className="text-[1.9rem] font-extrabold leading-none tracking-[-0.02em] text-graphite">
+                  04.11
+                </strong>
+              </div>
+              {clock.map((unit) => (
+                <div
+                  key={unit.k}
+                  className="min-w-[76px] rounded-xl border border-cocoa/20 bg-white/80 px-2 py-3 text-center"
+                >
+                  <strong className="block text-[1.75rem] font-extrabold leading-[1.1] tabular-nums text-graphite">
+                    {unit.v}
+                  </strong>
+                  <span className="text-[0.58rem] font-bold uppercase tracking-[0.14em] text-cocoa">
+                    {unit.k}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center">
+              <a href="#cadastro" className="btn-cta">
                 Quero entrar no grupo
               </a>
             </div>
