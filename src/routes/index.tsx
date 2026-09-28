@@ -14,9 +14,6 @@ import { submitLead, trackEvent } from "@/lib/leads.functions";
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
-import woman1Asset from "@/assets/woman-1.jpg.asset.json";
-import woman2Asset from "@/assets/woman-2.jpg.asset.json";
-import woman3Asset from "@/assets/woman-3.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
 import CookieBanner from "@/components/reline/CookieBanner";
@@ -25,26 +22,11 @@ const EVENT_START = "2026-11-04T00:00:00-03:00";
 const EVENT_END = "2026-11-30T23:59:59-03:00";
 const EVENT_URL = "https://reline-blacknovembro.lovable.app/";
 
-// TEMPLATE — substituir pelos depoimentos reais (nome, tipo de cabelo, foto e texto)
+// TEMPLATE — substituir pelos depoimentos em vídeo reais (nome, tipo de cabelo e vídeo)
 const TESTIMONIALS = [
-  {
-    photo: woman1Asset.url,
-    name: "[Nome da cliente]",
-    hair: "[Tipo de cabelo]",
-    quote: "[Espaço para o depoimento da cliente]",
-  },
-  {
-    photo: woman2Asset.url,
-    name: "[Nome da cliente]",
-    hair: "[Tipo de cabelo]",
-    quote: "[Espaço para o depoimento da cliente]",
-  },
-  {
-    photo: woman3Asset.url,
-    name: "[Nome da cliente]",
-    hair: "[Tipo de cabelo]",
-    quote: "[Espaço para o depoimento da cliente]",
-  },
+  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
+  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
+  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -435,25 +417,33 @@ function Index() {
             </figure>
           </Reveal>
 
-          {/* Templates para os 3 depoimentos reais */}
+          {/* Placeholders para os 3 depoimentos em vídeo */}
           <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={i} delay={i * 90}>
-                <figure className="flex h-full flex-col rounded-3xl bg-white px-7 py-8 shadow-[var(--shadow-soft)]">
-                  <blockquote className="flex-1 text-pretty text-[1rem] leading-[1.7] text-slate-body">
-                    {t.quote}
-                  </blockquote>
-                  <figcaption className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
-                    <img
-                      src={t.photo}
-                      alt={`Foto de ${t.name}`}
-                      className="h-12 w-12 rounded-full object-cover"
-                      loading="lazy"
-                    />
-                    <span>
-                      <span className="block text-[0.95rem] font-bold text-graphite">{t.name}</span>
-                      <span className="block text-[0.85rem] text-slate-body">{t.hair}</span>
-                    </span>
+                <figure className="flex h-full flex-col rounded-3xl bg-white p-4 shadow-[var(--shadow-soft)]">
+                  <div className="relative flex aspect-[9/13] w-full items-center justify-center overflow-hidden rounded-2xl bg-sand">
+                    <div className="flex flex-col items-center gap-4 px-6 text-center">
+                      <span
+                        aria-hidden="true"
+                        className="flex h-14 w-14 items-center justify-center rounded-full bg-graphite/90"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="ml-1 h-5 w-5 fill-white"
+                          aria-hidden="true"
+                        >
+                          <path d="M8 5.14v13.72L19 12 8 5.14z" />
+                        </svg>
+                      </span>
+                      <span className="text-[0.85rem] leading-snug text-slate-body">
+                        [Espaço para o vídeo de depoimento {i + 1}]
+                      </span>
+                    </div>
+                  </div>
+                  <figcaption className="px-3 pb-3 pt-4">
+                    <span className="block text-[0.95rem] font-bold text-graphite">{t.name}</span>
+                    <span className="block text-[0.85rem] text-slate-body">{t.hair}</span>
                   </figcaption>
                 </figure>
               </Reveal>
