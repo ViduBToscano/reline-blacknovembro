@@ -19,12 +19,33 @@ import woman2Asset from "@/assets/woman-2.jpg.asset.json";
 import woman3Asset from "@/assets/woman-3.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
-import { ChatPanel, ChatBubble, AvatarStack } from "@/components/reline/ChatPanel";
 import CookieBanner from "@/components/reline/CookieBanner";
 
 const EVENT_START = "2026-11-04T00:00:00-03:00";
 const EVENT_END = "2026-11-30T23:59:59-03:00";
 const EVENT_URL = "https://reline-blacknovembro.lovable.app/";
+
+// TEMPLATE — substituir pelos depoimentos reais (nome, tipo de cabelo, foto e texto)
+const TESTIMONIALS = [
+  {
+    photo: woman1Asset.url,
+    name: "[Nome da cliente]",
+    hair: "[Tipo de cabelo]",
+    quote: "[Espaço para o depoimento da cliente]",
+  },
+  {
+    photo: woman2Asset.url,
+    name: "[Nome da cliente]",
+    hair: "[Tipo de cabelo]",
+    quote: "[Espaço para o depoimento da cliente]",
+  },
+  {
+    photo: woman3Asset.url,
+    name: "[Nome da cliente]",
+    hair: "[Tipo de cabelo]",
+    quote: "[Espaço para o depoimento da cliente]",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
