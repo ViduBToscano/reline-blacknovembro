@@ -110,10 +110,10 @@
   );
   --grad-cta: linear-gradient(
     100deg,
-    var(--rose) 0%,
-    var(--rose-lt) 45%,
-    var(--rose-pale) 60%,
-    var(--rose) 100%
+    oklch(0.72 0.115 70) 0%,
+    oklch(0.82 0.105 78) 45%,
+    oklch(0.9 0.075 85) 60%,
+    oklch(0.72 0.115 70) 100%
   );
   --grad-bar: linear-gradient(90deg, var(--rose-dk) 0%, var(--rose) 60%, var(--rose-lt) 100%);
   --grad-banner: linear-gradient(
@@ -144,8 +144,8 @@
 
   /* Shadows */
   --shadow-soft: 0 14px 38px oklch(0.25 0.03 50 / 0.1);
-  --shadow-cta: 0 14px 38px oklch(0.6317 0.0943 28.4 / 0.28);
-  --shadow-cta-hover: 0 18px 46px oklch(0.6317 0.0943 28.4 / 0.4);
+  --shadow-cta: 0 14px 38px oklch(0.72 0.115 70 / 0.3);
+  --shadow-cta-hover: 0 18px 46px oklch(0.72 0.115 70 / 0.42);
   --shadow-whatsapp: 0 6px 28px oklch(0.761 0.2015 149.74 / 0.28);
   --shadow-whatsapp-hover: 0 10px 36px oklch(0.761 0.2015 149.74 / 0.38);
 
