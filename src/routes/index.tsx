@@ -277,7 +277,7 @@ function Index() {
             </p>
             <p className="mb-9 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               Em produtos selecionados, com descontos progressivos e muitas surpresas para quem está
-              na comunidade. Começa 04.11.
+              na comunidade. Muito mais motivos para cuidar dos seus cabelos!
             </p>
 
             <WhatsAppButton href="#cadastro" size="lg">
@@ -337,7 +337,7 @@ function Index() {
               O desconto aumenta a cada produto — percentuais revelados na comunidade a partir de
               04.11.
             </p>
-            <WhatsAppButton href="#cadastro">Conferir ofertas</WhatsAppButton>
+            <WhatsAppButton href="#cadastro">Entre na comunidade e confira as ofertas</WhatsAppButton>
           </Reveal>
         </div>
       </section>
@@ -500,7 +500,7 @@ function Index() {
         />
         <div className="container-page relative text-center">
           <Reveal>
-            <span className="eyebrow mb-3 text-cocoa">Black November Reline • começa 04.11</span>
+            <span className="eyebrow mb-3 text-cocoa"></span>
             <p className="font-black-novembro m-0 text-[clamp(3.4rem,10vw,7.8rem)] uppercase leading-[0.9] text-rose-dk">
               Até 80% off
             </p>
@@ -533,7 +533,7 @@ function Index() {
             </div>
             <div className="flex justify-center">
               <a href="#cadastro" className="btn-cta">
-                Quero entrar no grupo
+                Quero entrar na comunidade agora mesmo!
               </a>
             </div>
           </Reveal>
@@ -612,7 +612,7 @@ function Index() {
                 </p>
               )}
               <button type="submit" className="btn-cta mt-2.5" disabled={enviando}>
-                {enviando ? "Enviando…" : "Quero aproveitar"}
+                {enviando ? "Enviando…" : "Quero aproveitar os descontos!"}
               </button>
             </form>
             <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
