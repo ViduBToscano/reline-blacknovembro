@@ -166,7 +166,9 @@ function Index() {
   const [sent, setSent] = useState(false);
   const formRef = useRef<HTMLElement | null>(null);
 
-  const track = (event: "form_view" | "form_submit_click" | "popup_view" | "community_click") => {
+  const track = (
+    event: "form_view" | "form_submit_click" | "popup_view" | "community_click" | "offer_click",
+  ) => {
     void registrar({ data: { event } }).catch(() => {});
   };
 
