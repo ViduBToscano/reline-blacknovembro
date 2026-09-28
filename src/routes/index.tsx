@@ -358,7 +358,7 @@ function Index() {
               O desconto aumenta a cada produto — percentuais revelados na comunidade a partir de
               04.11.
             </p>
-            <WhatsAppButton href="#cadastro">Entre na comunidade e confira as ofertas</WhatsAppButton>
+            <WhatsAppButton href="#cadastro">Conferir ofertas</WhatsAppButton>
           </Reveal>
         </div>
       </section>
@@ -646,7 +646,7 @@ function Index() {
                 </p>
               )}
               <button type="submit" className="btn-cta mt-2.5" disabled={enviando}>
-                {enviando ? "Enviando…" : "Quero aproveitar os descontos!"}
+                {enviando ? "Enviando…" : "Quero aproveitar!"}
               </button>
             </form>
             <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
