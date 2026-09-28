@@ -275,9 +275,14 @@ function Index() {
             <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               Seu ritual de cuidado capilar com condições especiais.
             </p>
-            <p className="mb-2 text-[1.4rem] font-extrabold uppercase tracking-[0.05em] text-rose-pale">
-              Até 80% off.
-            </p>
+            <div className="mb-5">
+              <span className="mb-1 block text-[0.74rem] font-bold uppercase tracking-[0.24em] text-rose">
+                Até
+              </span>
+              <span className="font-black-novembro text-metal block text-[clamp(3.2rem,6.5vw,5.2rem)] uppercase leading-[0.92]">
+                80% off
+              </span>
+            </div>
             <p className="mb-9 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               Em produtos selecionados, condições especiais e descontos progressivos de até 30% off.
               Muito mais motivos para cuidar dos seus cabelos.
@@ -336,9 +341,14 @@ function Index() {
               Monte seu ritual Reline e aproveite os descontos progressivos da{" "}
               <span className="font-black-novembro">Black November</span>.
             </p>
-            <p className="mb-3 text-[1.5rem] font-extrabold uppercase tracking-[0.05em] text-rose-pale">
-              Até 30% off
-            </p>
+            <div className="mb-7">
+              <span className="mb-1 block text-[0.72rem] font-bold uppercase tracking-[0.2em] text-rose">
+                Descontos de até
+              </span>
+              <span className="font-black-novembro text-metal block text-[clamp(2.8rem,5.5vw,4.4rem)] uppercase leading-[0.95]">
+                30% off
+              </span>
+            </div>
             <ul className="mb-8 space-y-1.5 text-[1.05rem] leading-[1.7] text-foreground/80">
               <li>Escolha seus produtos.</li>
               <li>Combine seus favoritos.</li>
@@ -521,6 +531,36 @@ function Index() {
         </div>
       </section>
 
+      {/* Banner OFF */}
+      <section
+        className="relative overflow-hidden px-5 py-16"
+        style={{ background: "var(--grad-banner)" }}
+      >
+        <div className="grain" aria-hidden="true" />
+        <div className="container-page relative text-center">
+          <Reveal>
+            <span className="eyebrow mb-3 text-ink-deep/75">
+              Black November Reline • começa 04.11
+            </span>
+            <p className="font-black-novembro m-0 text-[clamp(3.4rem,10vw,7.8rem)] uppercase leading-[0.9] text-ink-deep">
+              Até 80% off
+            </p>
+            <p className="mx-auto mt-4 max-w-[54ch] text-[1.08rem] font-semibold leading-[1.65] text-ink-deep/90">
+              Descontos progressivos de até 30% off, condições especiais e muitas surpresas para
+              quem está na comunidade.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <a
+                href="#cadastro"
+                className="inline-flex items-center gap-2.5 rounded-full bg-ink px-9 py-4 text-[1.02rem] font-extrabold text-cream-lt transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                Quero entrar no grupo
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Cadastro */}
       <section
         id="cadastro"
@@ -541,9 +581,11 @@ function Index() {
               É hora de cuidar do seu cabelo.
             </h2>
             <p className="mx-auto mb-10 max-w-[46ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/75">
-              A <span className="font-black-novembro text-rose-lt">Black November</span> já começou.
-              Até 80% off em produtos selecionados, condições especiais e descontos progressivos de
-              até 30% off. Preencha seus dados e receba as condições em primeira mão.
+              A <span className="font-black-novembro text-rose-lt">Black November</span> já começou.{" "}
+              <strong className="font-extrabold text-rose-lt">Até 80% off</strong> em produtos
+              selecionados, condições especiais e descontos progressivos de{" "}
+              <strong className="font-extrabold text-rose-lt">até 30% off</strong>. Preencha seus
+              dados e receba as condições em primeira mão.
             </p>
             <form className="flex flex-col gap-3.5 text-left" onSubmit={handleSubmit} noValidate>
               <label className="flex flex-col gap-2">

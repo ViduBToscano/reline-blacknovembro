@@ -45,6 +45,7 @@
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
+  --color-ink-deep: var(--ink-deep);
   --color-rose: var(--rose);
   --color-rose-lt: var(--rose-lt);
   --color-rose-pale: var(--rose-pale);
@@ -115,6 +116,13 @@
     var(--rose) 100%
   );
   --grad-bar: linear-gradient(90deg, var(--rose-dk) 0%, var(--rose) 60%, var(--rose-lt) 100%);
+  --grad-banner: linear-gradient(
+    100deg,
+    var(--rose-dk) 0%,
+    var(--rose) 38%,
+    var(--rose-lt) 66%,
+    var(--rose-dk) 100%
+  );
   --grad-panel-a: linear-gradient(165deg, var(--ink-2) 0%, var(--ink) 55%, var(--ink-3) 100%);
   --grad-panel-b: linear-gradient(165deg, var(--ink-3) 0%, var(--ink) 60%, var(--ink-2) 100%);
   --grad-panel-c: linear-gradient(165deg, var(--ink-2) 0%, var(--ink) 50%, var(--ink-3) 100%);
