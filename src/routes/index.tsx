@@ -417,25 +417,33 @@ function Index() {
             </figure>
           </Reveal>
 
-          {/* Templates para os 3 depoimentos reais */}
+          {/* Placeholders para os 3 depoimentos em vídeo */}
           <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={i} delay={i * 90}>
-                <figure className="flex h-full flex-col rounded-3xl bg-white px-7 py-8 shadow-[var(--shadow-soft)]">
-                  <blockquote className="flex-1 text-pretty text-[1rem] leading-[1.7] text-slate-body">
-                    {t.quote}
-                  </blockquote>
-                  <figcaption className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
-                    <img
-                      src={t.photo}
-                      alt={`Foto de ${t.name}`}
-                      className="h-12 w-12 rounded-full object-cover"
-                      loading="lazy"
-                    />
-                    <span>
-                      <span className="block text-[0.95rem] font-bold text-graphite">{t.name}</span>
-                      <span className="block text-[0.85rem] text-slate-body">{t.hair}</span>
-                    </span>
+                <figure className="flex h-full flex-col rounded-3xl bg-white p-4 shadow-[var(--shadow-soft)]">
+                  <div className="relative flex aspect-[9/13] w-full items-center justify-center overflow-hidden rounded-2xl bg-sand">
+                    <div className="flex flex-col items-center gap-4 px-6 text-center">
+                      <span
+                        aria-hidden="true"
+                        className="flex h-14 w-14 items-center justify-center rounded-full bg-graphite/90"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="ml-1 h-5 w-5 fill-white"
+                          aria-hidden="true"
+                        >
+                          <path d="M8 5.14v13.72L19 12 8 5.14z" />
+                        </svg>
+                      </span>
+                      <span className="text-[0.85rem] leading-snug text-slate-body">
+                        [Espaço para o vídeo de depoimento {i + 1}]
+                      </span>
+                    </div>
+                  </div>
+                  <figcaption className="px-3 pb-3 pt-4">
+                    <span className="block text-[0.95rem] font-bold text-graphite">{t.name}</span>
+                    <span className="block text-[0.85rem] text-slate-body">{t.hair}</span>
                   </figcaption>
                 </figure>
               </Reveal>
