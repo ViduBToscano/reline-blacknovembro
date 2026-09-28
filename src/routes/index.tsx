@@ -25,26 +25,11 @@ const EVENT_START = "2026-11-04T00:00:00-03:00";
 const EVENT_END = "2026-11-30T23:59:59-03:00";
 const EVENT_URL = "https://reline-blacknovembro.lovable.app/";
 
-// TEMPLATE — substituir pelos depoimentos reais (nome, tipo de cabelo, foto e texto)
+// TEMPLATE — substituir pelos depoimentos em vídeo reais (nome, tipo de cabelo e vídeo)
 const TESTIMONIALS = [
-  {
-    photo: woman1Asset.url,
-    name: "[Nome da cliente]",
-    hair: "[Tipo de cabelo]",
-    quote: "[Espaço para o depoimento da cliente]",
-  },
-  {
-    photo: woman2Asset.url,
-    name: "[Nome da cliente]",
-    hair: "[Tipo de cabelo]",
-    quote: "[Espaço para o depoimento da cliente]",
-  },
-  {
-    photo: woman3Asset.url,
-    name: "[Nome da cliente]",
-    hair: "[Tipo de cabelo]",
-    quote: "[Espaço para o depoimento da cliente]",
-  },
+  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
+  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
+  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
 ];
 
 export const Route = createFileRoute("/")({
