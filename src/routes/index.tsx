@@ -166,7 +166,9 @@ function Index() {
   const [sent, setSent] = useState(false);
   const formRef = useRef<HTMLElement | null>(null);
 
-  const track = (event: "form_view" | "form_submit_click" | "popup_view" | "community_click") => {
+  const track = (
+    event: "form_view" | "form_submit_click" | "popup_view" | "community_click" | "offer_click",
+  ) => {
     void registrar({ data: { event } }).catch(() => {});
   };
 
@@ -283,7 +285,7 @@ function Index() {
               na comunidade. Muito mais motivos para cuidar dos seus cabelos!
             </p>
 
-            <WhatsAppButton href="#cadastro" size="lg">
+            <WhatsAppButton href="#cadastro" size="lg" onClick={() => track("offer_click")}>
               Aproveitar a Black November
             </WhatsAppButton>
             <p className="mt-4 text-[0.78rem] text-muted-foreground">
@@ -340,7 +342,9 @@ function Index() {
               O desconto aumenta a cada produto — percentuais revelados na comunidade a partir de
               04.11.
             </p>
-            <WhatsAppButton href="#cadastro">Conferir ofertas</WhatsAppButton>
+            <WhatsAppButton href="#cadastro" onClick={() => track("offer_click")}>
+              Conferir ofertas
+            </WhatsAppButton>
           </Reveal>
         </div>
       </section>
@@ -509,7 +513,9 @@ function Index() {
                   <span>E muitas surpresas.</span>
                 </li>
               </ul>
-              <WhatsAppButton href="#cadastro">Entrar na comunidade</WhatsAppButton>
+              <WhatsAppButton href="#cadastro" onClick={() => track("offer_click")}>
+                Entrar na comunidade
+              </WhatsAppButton>
             </div>
           </Reveal>
         </div>
@@ -556,7 +562,7 @@ function Index() {
               ))}
             </div>
             <div className="flex justify-center">
-              <a href="#cadastro" className="btn-cta">
+              <a href="#cadastro" className="btn-cta" onClick={() => track("offer_click")}>
                 Quero entrar na comunidade agora mesmo!
               </a>
             </div>
@@ -666,7 +672,11 @@ function Index() {
           </DialogHeader>
           <div className="mt-4 flex justify-center">
             <span onClick={() => track("community_click")}>
-              <WhatsAppButton href="https://chat.whatsapp.com/" size="lg">
+              <WhatsAppButton
+                href="https://chat.whatsapp.com/"
+                size="lg"
+                onClick={() => track("community_click")}
+              >
                 Entrar na comunidade
               </WhatsAppButton>
             </span>

@@ -109,7 +109,7 @@ export const getLeads = createServerFn({ method: "GET" }).handler(async () => {
 });
 
 const eventSchema = z.object({
-  event: z.enum(["form_view", "form_submit_click", "popup_view", "community_click"]),
+  event: z.enum(["form_view", "form_submit_click", "popup_view", "community_click", "offer_click"]),
 });
 
 function publicClient() {
@@ -142,6 +142,7 @@ export type EventStats = {
   form_submit_click: number;
   popup_view: number;
   community_click: number;
+  offer_click: number;
 };
 
 export const getEventStats = createServerFn({ method: "GET" }).handler(async () => {
@@ -151,6 +152,7 @@ export const getEventStats = createServerFn({ method: "GET" }).handler(async () 
     form_submit_click: 0,
     popup_view: 0,
     community_click: 0,
+    offer_click: 0,
   };
   if (!session.data.unlocked) return { unlocked: false as const, stats: empty };
 

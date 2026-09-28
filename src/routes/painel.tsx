@@ -47,6 +47,7 @@ function Painel() {
     form_submit_click: 0,
     popup_view: 0,
     community_click: 0,
+    offer_click: 0,
   });
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -152,8 +153,9 @@ function Painel() {
           </div>
         </div>
 
-        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {[
+            { label: "Clicaram em ofertas", value: stats.offer_click },
             { label: "Viram o formulário", value: stats.form_view },
             { label: "Clicaram em enviar", value: stats.form_submit_click },
             { label: "Chegaram ao pop-up", value: stats.popup_view },
