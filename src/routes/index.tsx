@@ -403,49 +403,62 @@ function Index() {
         </div>
       </section>
 
-      {/* Começa 04.11 + chat */}
+      {/* Depoimentos (template — aguardando depoimentos reais) */}
       <section
         className="relative overflow-hidden px-5 py-20"
         style={{ background: "var(--grad-panel-b)" }}
       >
         <div className="grain" aria-hidden="true" />
-        <div className="container-page relative grid items-center gap-20 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
-          <Reveal>
-            <span className="eyebrow mb-4 text-rose">04.11</span>
-            <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
-              Começa dia 04 de novembro.
+        <div className="container-page relative">
+          <Reveal className="mx-auto mb-14 max-w-[720px] text-center">
+            <span className="eyebrow mb-4 text-rose">Quem usa, sente a diferença.</span>
+            <h2 className="text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
+              Resultados que fazem parte da rotina de quem escolheu cuidar dos cabelos com Reline.
             </h2>
-            <p className="mb-1 text-[1.15rem] leading-[1.6] text-muted-foreground">
-              Você pode esperar a Black começar…
-            </p>
-            <p className="mb-8 text-[1.35rem] font-extrabold leading-[1.4] text-rose-pale">
-              ou chegar antes de todo mundo.
-            </p>
-            <p className="mb-9 max-w-[52ch] leading-[1.75] text-foreground/80">
-              Entre para a comunidade e fique por dentro de todas as novidades.
-            </p>
-            <WhatsAppButton href="#cadastro">Quero participar</WhatsAppButton>
           </Reveal>
 
-          <Reveal delay={120}>
-            <ChatPanel
-              avatar={portraitAsset.url}
-              title="Reline • Black November"
-              subtitle="Comunidade no WhatsApp"
-            >
-              <ChatBubble side="in">
-                Meninas, a Black começa 04.11 — e vocês vão ver as condições antes de todo mundo 💕
-              </ChatBubble>
-              <ChatBubble side="out">Já separei minha lista de reposição 🤩</ChatBubble>
-              <ChatBubble side="in">
-                Hoje tem uma condição nova liberada. Corre que é por tempo limitado ✨
-              </ChatBubble>
-              <AvatarStack
-                avatars={[woman1Asset.url, woman2Asset.url, woman3Asset.url]}
-                caption="+ de 1000 pessoas já estão sabendo de tudo em primeira mão!"
-              />
-            </ChatPanel>
+          {/* Depoimento em destaque */}
+          <Reveal className="mx-auto mb-6 max-w-[760px]">
+            <figure className="rounded-3xl bg-white px-8 py-10 text-center shadow-[var(--shadow-soft)]">
+              <span
+                aria-hidden="true"
+                className="mb-4 block text-[3rem] font-extrabold leading-none text-rose"
+              >
+                “
+              </span>
+              <blockquote className="mx-auto max-w-[52ch] text-pretty text-[1.25rem] font-medium leading-[1.55] text-graphite">
+                Meu cabelo mudou completamente depois que comecei a usar a Reline.
+              </blockquote>
+              <figcaption className="mt-5 text-[0.95rem] font-bold tracking-wide text-slate-body">
+                [Nome da cliente]
+              </figcaption>
+            </figure>
           </Reveal>
+
+          {/* Templates para os 3 depoimentos reais */}
+          <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
+            {TESTIMONIALS.map((t, i) => (
+              <Reveal key={i} delay={i * 90}>
+                <figure className="flex h-full flex-col rounded-3xl bg-white px-7 py-8 shadow-[var(--shadow-soft)]">
+                  <blockquote className="flex-1 text-pretty text-[1rem] leading-[1.7] text-slate-body">
+                    {t.quote}
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
+                    <img
+                      src={t.photo}
+                      alt={`Foto de ${t.name}`}
+                      className="h-12 w-12 rounded-full object-cover"
+                      loading="lazy"
+                    />
+                    <span>
+                      <span className="block text-[0.95rem] font-bold text-graphite">{t.name}</span>
+                      <span className="block text-[0.85rem] text-slate-body">{t.hair}</span>
+                    </span>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
