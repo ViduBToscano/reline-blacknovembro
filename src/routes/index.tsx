@@ -328,7 +328,7 @@ function Index() {
                 Descontos de até
               </span>
               <span className="font-black-novembro text-metal m-0 block px-2 pb-4 pt-2 text-[clamp(2.8rem,5.5vw,4.4rem)] uppercase leading-[1.1] -my-2">
-                30% off
+                80% OFF
               </span>
             </div>
             <div className="mb-3 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
