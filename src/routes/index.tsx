@@ -1,3 +1,9 @@
+import dep1 from "@/assets/depoimento-1.mp4.asset.json";
+import dep2 from "@/assets/depoimento-2.mp4.asset.json";
+import dep3 from "@/assets/depoimento-3.mp4.asset.json";
+import poster1 from "@/assets/depoimento-poster-1.jpg.asset.json";
+import poster2 from "@/assets/depoimento-poster-2.jpg.asset.json";
+import poster3 from "@/assets/depoimento-poster-3.jpg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
@@ -22,11 +28,10 @@ const EVENT_START = "2026-11-04T00:00:00-03:00";
 const EVENT_END = "2026-11-30T23:59:59-03:00";
 const EVENT_URL = "https://reline-blacknovembro.lovable.app/";
 
-// TEMPLATE — substituir pelos depoimentos em vídeo reais (nome, tipo de cabelo e vídeo)
 const TESTIMONIALS = [
-  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
-  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
-  { name: "[Nome da cliente]", hair: "[Tipo de cabelo]" },
+  { video: dep1.url, poster: poster1.url },
+  { video: dep2.url, poster: poster2.url },
+  { video: dep3.url, poster: poster3.url },
 ];
 
 export const Route = createFileRoute("/")({
@@ -393,52 +398,19 @@ function Index() {
             </h2>
           </Reveal>
 
-          {/* Depoimento em destaque */}
-          <Reveal className="mx-auto mb-6 max-w-[760px]">
-            <figure className="rounded-3xl bg-white px-8 py-10 text-center shadow-[var(--shadow-soft)]">
-              <span
-                aria-hidden="true"
-                className="mb-4 block text-[3rem] font-extrabold leading-none text-rose"
-              >
-                “
-              </span>
-              <blockquote className="mx-auto max-w-[52ch] text-pretty text-[1.25rem] font-medium leading-[1.55] text-graphite">
-                Meu cabelo mudou completamente depois que comecei a usar a Reline.
-              </blockquote>
-              <figcaption className="mt-5 text-[0.95rem] font-bold tracking-wide text-slate-body">
-                [Nome da cliente]
-              </figcaption>
-            </figure>
-          </Reveal>
-
           {/* Placeholders para os 3 depoimentos em vídeo */}
           <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={i} delay={i * 90}>
-                <figure className="flex h-full flex-col rounded-3xl bg-white p-4 shadow-[var(--shadow-soft)]">
-                  <div className="relative flex aspect-[9/13] w-full items-center justify-center overflow-hidden rounded-2xl bg-sand">
-                    <div className="flex flex-col items-center gap-4 px-6 text-center">
-                      <span
-                        aria-hidden="true"
-                        className="flex h-14 w-14 items-center justify-center rounded-full bg-graphite/90"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          className="ml-1 h-5 w-5 fill-white"
-                          aria-hidden="true"
-                        >
-                          <path d="M8 5.14v13.72L19 12 8 5.14z" />
-                        </svg>
-                      </span>
-                      <span className="text-[0.85rem] leading-snug text-slate-body">
-                        [Espaço para o vídeo de depoimento {i + 1}]
-                      </span>
-                    </div>
-                  </div>
-                  <figcaption className="px-3 pb-3 pt-4">
-                    <span className="block text-[0.95rem] font-bold text-graphite">{t.name}</span>
-                    <span className="block text-[0.85rem] text-slate-body">{t.hair}</span>
-                  </figcaption>
+                <figure className="flex h-full flex-col rounded-3xl bg-white p-3 shadow-[var(--shadow-soft)]">
+                  <video
+                    src={t.video}
+                    poster={t.poster}
+                    controls
+                    playsInline
+                    preload="none"
+                    className="aspect-[9/16] w-full rounded-2xl bg-graphite object-cover"
+                  />
                 </figure>
               </Reveal>
             ))}
