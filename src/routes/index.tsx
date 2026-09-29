@@ -87,12 +87,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const LADDER = [
-  { label: "1 produto", w: "30%" },
-  { label: "2 produtos", w: "52%" },
-  { label: "3 produtos", w: "76%" },
-  { label: "Kit completo", w: "100%" },
-];
 
 const PERKS = [
   { n: "01", t: "Acesso antecipado à Black", d: "Saiba das condições antes de todo mundo." },
@@ -330,24 +324,13 @@ function Index() {
               <span className="font-black-novembro text-metal m-0 block px-2 pb-4 pt-2 text-[clamp(2.8rem,5.5vw,4.4rem)] uppercase leading-[1.1] -my-2">
                 80% OFF
               </span>
+              <span className="block text-[0.72rem] font-bold uppercase tracking-[0.2em] text-rose">
+                em produtos selecionados
+              </span>
             </div>
-            <div className="mb-3 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
-              {LADDER.map((step, i) => (
-                <span
-                  key={step.label}
-                  className="flex items-center gap-2.5 text-[1rem] leading-[1.6] text-foreground/85"
-                >
-                  <span
-                    className="h-2.5 w-2.5 rounded-full"
-                    style={{ background: "var(--grad-step-circle)", opacity: 0.4 + i * 0.2 }}
-                  />
-                  {step.label}
-                </span>
-              ))}
-            </div>
-            <p className="mb-8 text-[0.82rem] leading-[1.6] text-muted-foreground">
-              O desconto aumenta a cada produto — percentuais revelados na comunidade a partir de
-              04.11.
+            <p className="mb-8 text-[1rem] leading-[1.6] text-foreground/85">
+              Lives com condições inéditas, presentes e kits exclusivos com descontos
+              progressivos.
             </p>
             <WhatsAppButton href="#cadastro" onClick={() => track("offer_click")}>
               Conferir ofertas
