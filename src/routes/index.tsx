@@ -552,9 +552,8 @@ function Index() {
             <p className="mx-auto mb-10 max-w-[46ch] text-pretty text-[1.05rem] leading-[1.7] text-foreground/75">
               A <span className="font-black-novembro text-rose-lt">Black November</span> já começou.{" "}
               <strong className="font-extrabold text-rose-lt">Até 80% off</strong> em produtos
-              selecionados, condições especiais e descontos progressivos de{" "}
-              <strong className="font-extrabold text-rose-lt">até 30% off</strong>. Preencha seus
-              dados e receba as condições em primeira mão.
+              selecionados, condições especiais e descontos progressivos. Preencha seus dados e
+              receba as condições em primeira mão através da nossa comunidade.
             </p>
             <form className="flex flex-col gap-3.5 text-left" onSubmit={handleSubmit} noValidate>
               <label className="flex flex-col gap-2">
