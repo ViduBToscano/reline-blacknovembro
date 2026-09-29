@@ -287,8 +287,7 @@ function Index() {
               Até 80% off
             </p>
             <p className="mb-9 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              Em produtos selecionados, com descontos progressivos e muitas surpresas para quem está
-              na comunidade. Muito mais motivos para cuidar dos seus cabelos!
+              Lives com condições exclusivas. Descontos progressivos e oportunidades únicas.
             </p>
 
             <WhatsAppButton href="#cadastro" size="lg" onClick={() => track("offer_click")}>
