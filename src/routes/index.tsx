@@ -525,8 +525,7 @@ function Index() {
               Até 80% off
             </p>
             <p className="mx-auto mt-4 max-w-[54ch] text-pretty text-[1.08rem] font-semibold leading-[1.65] text-slate-body">
-              Descontos progressivos de até 30% off, condições especiais e muitas surpresas para
-              quem está na comunidade.
+              Descontos progressivos e condições especiais em lives exclusivas. Surpresas especiais para a comunidade.&nbsp;
             </p>
             <div className="mb-9 mt-8 flex flex-wrap items-stretch justify-center gap-2.5">
               <div className="mr-1.5 flex flex-none flex-col justify-center border-r border-cocoa/25 py-3 pr-6 text-left">
