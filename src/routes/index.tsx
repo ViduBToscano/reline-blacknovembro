@@ -312,14 +312,14 @@ function Index() {
               <strong className="font-semibold text-foreground">E quem estiver na comunidade vai saber primeiro.</strong>{"\u00a0"}
               A partir de 04 de novembro, a Reline preparou uma Black especial com <strong className="font-semibold text-foreground">descontos progressivos</strong> para você cuidar dos seus cabelos e aproveitar condições que não estarão disponíveis o ano todo.
             </p>
-            <p className="mb-9 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
+            <p className="mb-7 max-w-[52ch] text-pretty text-[0.95rem] leading-[1.7] text-foreground/80 sm:mb-9 sm:text-[1.05rem] sm:leading-[1.75]">
               Entre para a comunidade e receba tudo em primeira mão.
             </p>
 
-            <WhatsAppButton href="#cadastro" size="lg" onClick={() => track("offer_click")}>
+            <WhatsAppButton href="#cadastro" size="lg" className="w-full sm:w-auto" onClick={() => track("offer_click")}>
               Quero entrar na comunidade
             </WhatsAppButton>
-            <p className="mt-4 text-[0.78rem] text-muted-foreground">
+            <p className="mt-4 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.78rem]">
               *Vagas/participação limitada à comunidade.
             </p>
           </div>
