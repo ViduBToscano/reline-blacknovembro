@@ -466,14 +466,15 @@ function Index() {
               Hoje, Renata une tricologia, experiência prática e inovação para transformar a forma
               como profissionais e clientes entendem e cuidam dos cabelos.
             </p>
-
-            <div className="mt-10 flex justify-center">
-              <WhatsAppButton href="#cadastro" size="lg" className="w-full max-w-[440px]" onClick={() => track("offer_click")}>
-                Entrar na comunidade
-              </WhatsAppButton>
-            </div>
           </Reveal>
         </div>
+        <Reveal delay={200}>
+          <div className="mt-12 flex justify-center">
+            <WhatsAppButton href="#cadastro" size="lg" className="w-full max-w-[440px]" onClick={() => track("offer_click")}>
+              Entrar na comunidade
+            </WhatsAppButton>
+          </div>
+        </Reveal>
       </section>
 
       {/* Banner OFF + contagem */}
