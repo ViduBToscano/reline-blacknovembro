@@ -26,7 +26,6 @@ import {
 import { submitLead, trackEvent } from "@/lib/leads.functions";
 
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
-import produtosAsset from "@/assets/produtos-reline.webp.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
@@ -323,20 +322,7 @@ function Index() {
             <p className="mt-4 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.78rem]">
               *Vagas/participação limitada à comunidade.
             </p>
-          </div>
-          <img
-            src={produtosAsset.url}
-            alt="Linha de produtos Reline"
-            loading="lazy"
-            className="mx-auto mt-10 w-full max-w-[420px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.45)] lg:hidden"
-          />
         </div>
-        <img
-          src={produtosAsset.url}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-6 right-[3%] hidden w-[min(34vw,480px)] drop-shadow-[0_24px_40px_rgba(0,0,0,0.5)] lg:block"
-        />
       </section>
 
       {/* Campanha — seção oculta por solicitação; para reativar, mude SHOW_CAMPANHA para true */}
