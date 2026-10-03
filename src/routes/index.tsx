@@ -430,7 +430,7 @@ function Index() {
           <Reveal className="mx-auto mb-12 max-w-[780px] text-center">
             <span className="eyebrow mb-4 text-cocoa">Antes e depois</span>
             <h2 className="text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
-              Resultados Reais de quem usa e aprova Reline há 9 anos.
+              Resultados reais de quem usa e aprova Reline há 9 anos.
             </h2>
           </Reveal>
 
