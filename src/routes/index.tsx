@@ -468,23 +468,6 @@ function Index() {
             </p>
 
             <div className="mt-10 border-t border-cocoa/20 pt-8">
-              <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[2.8px] text-graphite">
-                Black November Reline
-              </p>
-              <ul className="mb-7 space-y-2 text-[1rem] font-normal leading-[1.7] text-graphite">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-0.5 shrink-0 text-cocoa">✓</span>
-                  <span>Descontos progressivos.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-0.5 shrink-0 text-cocoa">✓</span>
-                  <span>Condições especiais.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-0.5 shrink-0 text-cocoa">✓</span>
-                  <span>E muitas surpresas.</span>
-                </li>
-              </ul>
               <WhatsAppButton href="#cadastro" onClick={() => track("offer_click")}>
                 Entrar na comunidade
               </WhatsAppButton>
