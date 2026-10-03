@@ -305,21 +305,21 @@ function Index() {
               </span>
             </h1>
 
-            <h2 className="mb-4 text-pretty text-[clamp(1.25rem,2.1vw,1.75rem)] font-bold leading-[1.25] text-card-foreground">
-              Um mês de oportunidades extraordinárias.
+            <h2 className="font-black-novembro mb-4 text-pretty text-[clamp(1.4rem,2.4vw,2rem)] uppercase leading-[1.15] text-card-foreground">
+              A Black mais esperada do ano está chegando.
             </h2>
             <p className="font-black-novembro text-metal m-0 mb-6 text-[clamp(2.6rem,5vw,4rem)] uppercase leading-[0.95]">
               Até 80% off
             </p>
             <p className="mb-9 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              Lives com condições exclusivas. Descontos progressivos e oportunidades únicas.
+              E quem estiver na comunidade vai saber primeiro. A partir de 04 de novembro, a Reline preparou uma Black especial com descontos progressivos para você cuidar dos seus cabelos e aproveitar condições que não estarão disponíveis o ano todo. Entre para a comunidade e receba tudo em primeira mão.
             </p>
 
             <WhatsAppButton href="#cadastro" size="lg" onClick={() => track("offer_click")}>
-              Aproveitar a Black November
+              Quero entrar na comunidade
             </WhatsAppButton>
             <p className="mt-4 text-[0.78rem] text-muted-foreground">
-              *Participação limitada à comunidade. Sem custo para entrar.
+              *Vagas/participação limitada à comunidade.
             </p>
           </div>
         </div>
