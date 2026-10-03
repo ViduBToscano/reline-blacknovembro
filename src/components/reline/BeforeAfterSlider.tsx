@@ -19,20 +19,15 @@ export function BeforeAfterSlider({ before, after, alt }: BeforeAfterSliderProps
           loading="lazy"
           draggable={false}
         />
-        <div
-          className="absolute inset-y-0 left-0 overflow-hidden"
-          style={{ width: `${position}%` }}
+        <img
+          src={before}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          loading="lazy"
+          draggable={false}
           aria-hidden="true"
-        >
-          <img
-            src={before}
-            alt=""
-            className="h-full max-w-none object-cover"
-            style={{ width: "calc((100cqw - 1.5rem))" }}
-            loading="lazy"
-            draggable={false}
-          />
-        </div>
+        />
 
         <span className="absolute left-3 top-3 rounded-full bg-ink/80 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-cream-lt backdrop-blur-sm">
           Antes
