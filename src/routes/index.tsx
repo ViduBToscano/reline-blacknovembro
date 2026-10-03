@@ -441,28 +441,32 @@ function Index() {
           <Reveal delay={120}>
             
             <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
-              Cuidado que entende o seu cabelo.
+              Renata Fraga 15 anos de Transformação capilar
             </h2>
             <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
-              A Reline une{" "}
-              <strong className="font-extrabold text-cocoa">tratamento, pesquisa e conhecimento</strong>{" "}
-              para cuidar dos fios de forma completa.
+              Renata Fraga é tricologista e terapeuta capilar, com 15 anos de experiência no mercado
+              e uma trajetória dedicada à saúde e transformação dos cabelos.
             </p>
-            <p className="mb-8 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
-              Produtos desenvolvidos para diferentes necessidades, da nutrição à reconstrução, com
-              foco em{" "}
-              <strong className="font-extrabold text-cocoa">saúde, força e beleza dos cabelos</strong>.
+            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+              À frente de seu espaço em Belo Horizonte, já atendeu mais de{" "}
+              <strong className="font-extrabold text-cocoa">12 mil pessoas</strong>, incluindo
+              celebridades como{" "}
+              <strong className="font-extrabold text-cocoa">Hulk Paraíba</strong>,{" "}
+              <strong className="font-extrabold text-cocoa">Dani Cicarelli</strong>,{" "}
+              <strong className="font-extrabold text-cocoa">Ticiane Pinheiro</strong>,{" "}
+              <strong className="font-extrabold text-cocoa">Shantal</strong>,{" "}
+              <strong className="font-extrabold text-cocoa">Carol Marra</strong> e{" "}
+              <strong className="font-extrabold text-cocoa">Juju Norremose</strong>.
             </p>
-            <div className="flex flex-wrap gap-2.5">
-              {NEEDS.map((need) => (
-                <span
-                  key={need}
-                  className="rounded-[47px] bg-cocoa px-[1.1rem] py-2 text-[0.66rem] font-bold uppercase tracking-[2.82px] text-cream-lt"
-                >
-                  {need}
-                </span>
-              ))}
-            </div>
+            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+              Sua experiência no atendimento e sua busca constante por soluções para as diferentes
+              necessidades dos cabelos deram origem à Reline, marca criada por Renata e totalmente
+              dedicada ao tratamento do couro cabeludo e dos fios.
+            </p>
+            <p className="max-w-[56ch] text-pretty text-[1.05rem] font-extrabold leading-[1.75] text-cocoa">
+              Hoje, Renata une tricologia, experiência prática e inovação para transformar a forma
+              como profissionais e clientes entendem e cuidam dos cabelos.
+            </p>
 
             <div className="mt-10 border-t border-cocoa/20 pt-8">
               <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[2.8px] text-graphite">
