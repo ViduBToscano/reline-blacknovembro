@@ -28,6 +28,7 @@ import { submitLead, trackEvent } from "@/lib/leads.functions";
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
+import produtosAsset from "@/assets/produtos_reline.svg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
 import { BeforeAfterSlider } from "@/components/reline/BeforeAfterSlider";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
@@ -390,25 +391,35 @@ function Index() {
               Não é apenas mais um grupo de ofertas. É o lugar onde você vai receber:
             </p>
           </Reveal>
-          <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))]">
-            {PERKS.map((perk, i) => (
-              <Reveal key={perk.n} delay={i * 90}>
-                <div className="h-full rounded-3xl bg-white px-7 py-9 shadow-[var(--shadow-soft)]">
-                  <span
-                    className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full text-[0.95rem] font-extrabold text-cream-lt"
-                    style={{ background: "var(--grad-step-circle)" }}
-                  >
-                    {perk.n}
-                  </span>
-                  <h3 className="mb-2 text-[1.12rem] font-bold leading-[1.25] text-graphite">
-                    {perk.t}
-                  </h3>
-                  <p className="text-pretty text-[0.95rem] leading-[1.7] text-slate-body">
-                    {perk.d}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
+            <Reveal className="mx-auto w-full max-w-[440px] lg:max-w-none">
+              <img
+                src={produtosAsset.url}
+                alt="Produtos Reline para tratamento do couro cabeludo e dos fios"
+                className="w-full rounded-3xl"
+                loading="lazy"
+              />
+            </Reveal>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {PERKS.map((perk, i) => (
+                <Reveal key={perk.n} delay={i * 90}>
+                  <div className="h-full rounded-3xl bg-white px-7 py-9 shadow-[var(--shadow-soft)]">
+                    <span
+                      className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full text-[0.95rem] font-extrabold text-cream-lt"
+                      style={{ background: "var(--grad-step-circle)" }}
+                    >
+                      {perk.n}
+                    </span>
+                    <h3 className="mb-2 text-[1.12rem] font-bold leading-[1.25] text-graphite">
+                      {perk.t}
+                    </h3>
+                    <p className="text-pretty text-[0.95rem] leading-[1.7] text-slate-body">
+                      {perk.d}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
