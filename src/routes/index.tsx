@@ -286,14 +286,14 @@ function Index() {
           aria-hidden="true"
         />
         <div className="grain" aria-hidden="true" />
-        <div className="container-page relative py-20">
+        <div className="container-page relative py-14 sm:py-20">
           <div className="max-w-[620px]">
-            <img src={logoAsset.url} alt="Reline" className="mb-6 h-8 w-auto" />
+            <img src={logoAsset.url} alt="Reline" className="mb-5 h-7 w-auto sm:mb-6 sm:h-8" />
             <h1 className="m-0">
               <span className="sr-only">Black November Reline 2026</span>
               <span
                 aria-hidden="true"
-                className="font-black-novembro text-metal block text-[clamp(4rem,9.5vw,8.5rem)] leading-[0.86]"
+                className="font-black-novembro text-metal block text-[clamp(3.4rem,17vw,8.5rem)] leading-[0.9] sm:leading-[0.86]"
               >
                 BLACK
               </span>
