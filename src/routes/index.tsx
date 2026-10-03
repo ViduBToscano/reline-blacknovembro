@@ -322,6 +322,7 @@ function Index() {
             <p className="mt-4 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.78rem]">
               *Vagas/participação limitada à comunidade.
             </p>
+          </div>
         </div>
       </section>
 
