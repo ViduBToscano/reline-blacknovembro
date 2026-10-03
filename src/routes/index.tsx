@@ -300,8 +300,10 @@ function Index() {
         </div>
       </section>
 
-      {/* Campanha */}
+      {/* Campanha — seção oculta por solicitação; para reativar, mude SHOW_CAMPANHA para true */}
+      {SHOW_CAMPANHA && (
       <section
+
         className="relative overflow-hidden px-5 py-20"
         style={{ background: "var(--grad-panel-a)" }}
       >
