@@ -276,7 +276,8 @@
 }
 
 @media (max-width: 640px) {
-  .btn-whatsapp {
+  .btn-whatsapp,
+  .btn-cta {
     width: 100%;
     padding-inline: 1.25rem;
     text-align: center;
