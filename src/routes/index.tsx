@@ -426,7 +426,7 @@ function Index() {
 
       {/* Linha Reline */}
       <section className="relative bg-cream px-5 py-20">
-        <div className="container-page grid items-center gap-20 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
+        <div className="container-page grid items-center gap-12 sm:gap-16 lg:grid-cols-[minmax(320px,1.1fr)_minmax(360px,1fr)] lg:gap-20">
           <Reveal>
             <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-sand shadow-[var(--shadow-soft)]">
               <img
@@ -467,8 +467,8 @@ function Index() {
               como profissionais e clientes entendem e cuidam dos cabelos.
             </p>
 
-            <div className="mt-10 border-t border-cocoa/20 pt-8">
-              <WhatsAppButton href="#cadastro" onClick={() => track("offer_click")}>
+            <div className="mt-10 flex justify-center">
+              <WhatsAppButton href="#cadastro" size="lg" className="w-full max-w-[440px]" onClick={() => track("offer_click")}>
                 Entrar na comunidade
               </WhatsAppButton>
             </div>
