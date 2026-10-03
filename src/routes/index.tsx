@@ -27,7 +27,7 @@ import { submitLead, trackEvent } from "@/lib/leads.functions";
 
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
-import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
+import portraitAsset from "@/assets/reline-portrait-renata.jpg.asset.json";
 const produtosAsset = { url: "/produtos-reline.webp" };
 import { Reveal } from "@/components/reline/Reveal";
 import { BeforeAfterSlider } from "@/components/reline/BeforeAfterSlider";
