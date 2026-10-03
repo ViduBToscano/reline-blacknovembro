@@ -344,6 +344,8 @@ function Index() {
           </Reveal>
         </div>
       </section>
+      )}
+
 
       {/* Comunidade VIP */}
       <section className="relative overflow-hidden bg-cream px-5 py-20">
