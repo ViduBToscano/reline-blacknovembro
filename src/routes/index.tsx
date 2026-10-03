@@ -422,7 +422,7 @@ function Index() {
             </h2>
           </Reveal>
 
-          <div className="mx-auto grid w-full max-w-[880px] gap-6 sm:grid-cols-2">
+          <div className="mx-auto grid w-full max-w-[640px] gap-5 sm:grid-cols-2">
             {BEFORE_AFTER_RESULTS.map((result, i) => (
               <Reveal key={result.before} delay={i * 80}>
                 <BeforeAfterSlider {...result} />
