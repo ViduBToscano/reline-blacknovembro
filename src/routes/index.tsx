@@ -4,6 +4,14 @@ import dep3 from "@/assets/depoimento-3.mp4.asset.json";
 import poster1 from "@/assets/depoimento-poster-1.jpg.asset.json";
 import poster2 from "@/assets/depoimento-poster-2.jpg.asset.json";
 import poster3 from "@/assets/depoimento-poster-3.jpg.asset.json";
+import felipeAntes from "@/assets/felipe-saraiva-antes.jpg.asset.json";
+import felipeDepois from "@/assets/felipe-saraiva-depois.jpg.asset.json";
+import janeiroAntes from "@/assets/janeiro-antes.jpg.asset.json";
+import janeiroDepois from "@/assets/janeiro-depois.jpg.asset.json";
+import julianaAntes from "@/assets/juliana-santos-antes.jpg.asset.json";
+import julianaDepois from "@/assets/juliana-santos-depois.jpg.asset.json";
+import patriciaAntes from "@/assets/patricia-pinho-antes.jpg.asset.json";
+import patriciaDepois from "@/assets/patricia-pinho-depois.jpg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
@@ -21,6 +29,7 @@ import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
+import { BeforeAfterSlider } from "@/components/reline/BeforeAfterSlider";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
 import CookieBanner from "@/components/reline/CookieBanner";
 
@@ -36,6 +45,13 @@ const TESTIMONIALS = [
   { video: dep1.url, poster: poster1.url },
   { video: dep2.url, poster: poster2.url },
   { video: dep3.url, poster: poster3.url },
+];
+
+const BEFORE_AFTER_RESULTS = [
+  { before: felipeAntes.url, after: felipeDepois.url, alt: "Resultado real de tratamento capilar" },
+  { before: janeiroAntes.url, after: janeiroDepois.url, alt: "Resultado real em cabelo longo" },
+  { before: julianaAntes.url, after: julianaDepois.url, alt: "Resultado real em cabelo cacheado" },
+  { before: patriciaAntes.url, after: patriciaDepois.url, alt: "Resultado real em cabelo curto e cacheado" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -396,7 +412,27 @@ function Index() {
         </div>
       </section>
 
-      {/* Depoimentos (template — aguardando depoimentos reais) */}
+      {/* Antes e depois */}
+      <section className="relative bg-cream px-5 py-20">
+        <div className="container-page relative">
+          <Reveal className="mx-auto mb-12 max-w-[780px] text-center">
+            <span className="eyebrow mb-4 text-cocoa">Antes e depois</span>
+            <h2 className="text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
+              Resultados Reais de quem usa e aprova Reline há 9 anos.
+            </h2>
+          </Reveal>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {BEFORE_AFTER_RESULTS.map((result, i) => (
+              <Reveal key={result.before} delay={i * 80}>
+                <BeforeAfterSlider {...result} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Depoimentos em vídeo */}
       <section
         className="relative overflow-hidden px-5 py-20"
         style={{ background: "var(--grad-panel-b)" }}

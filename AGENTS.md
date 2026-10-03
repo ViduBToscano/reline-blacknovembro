@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep interactive before-and-after image comparison encapsulated in the reusable Reline slider component so pointer, touch, and keyboard behavior stay consistent.
