@@ -116,7 +116,6 @@ const PERKS = [
   },
 ];
 
-const NEEDS = ["Nutrição", "Reconstrução", "Hidratação", "Finalização"];
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
