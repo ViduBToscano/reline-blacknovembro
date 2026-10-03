@@ -28,7 +28,7 @@ import { submitLead, trackEvent } from "@/lib/leads.functions";
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
-import produtosAsset from "@/assets/produtos_reline.svg.asset.json";
+import produtosAsset from "@/assets/produtos-reline-foto.webp.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
 import { BeforeAfterSlider } from "@/components/reline/BeforeAfterSlider";
 import { WhatsAppButton } from "@/components/reline/WhatsAppButton";
@@ -400,20 +400,20 @@ function Index() {
                 loading="lazy"
               />
             </Reveal>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {PERKS.map((perk, i) => (
                 <Reveal key={perk.n} delay={i * 90}>
-                  <div className="h-full rounded-3xl bg-white px-7 py-9 shadow-[var(--shadow-soft)]">
+                  <div className="h-full rounded-2xl bg-white px-5 py-5 shadow-[var(--shadow-soft)]">
                     <span
-                      className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full text-[0.95rem] font-extrabold text-cream-lt"
+                      className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-[0.8rem] font-extrabold text-cream-lt"
                       style={{ background: "var(--grad-step-circle)" }}
                     >
                       {perk.n}
                     </span>
-                    <h3 className="mb-2 text-[1.12rem] font-bold leading-[1.25] text-graphite">
+                    <h3 className="mb-1.5 text-[0.98rem] font-bold leading-[1.25] text-graphite">
                       {perk.t}
                     </h3>
-                    <p className="text-pretty text-[0.95rem] leading-[1.7] text-slate-body">
+                    <p className="text-pretty text-[0.85rem] leading-[1.55] text-slate-body">
                       {perk.d}
                     </p>
                   </div>
