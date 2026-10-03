@@ -26,6 +26,7 @@ import {
 import { submitLead, trackEvent } from "@/lib/leads.functions";
 
 import heroAsset from "@/assets/reline-hero.jpg.asset.json";
+import produtosAsset from "@/assets/produtos-reline.webp.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait.jpg.asset.json";
 import { Reveal } from "@/components/reline/Reveal";
@@ -305,7 +306,7 @@ function Index() {
               </span>
             </h1>
 
-            <h2 className="font-black-novembro mb-3 text-pretty text-[clamp(1.2rem,4.6vw,2rem)] uppercase leading-[1.25] text-card-foreground sm:mb-4 sm:leading-[1.15]">
+            <h2 className="font-black-novembro mb-3 text-pretty text-[clamp(1.05rem,3.8vw,1.45rem)] uppercase leading-[1.3] text-card-foreground sm:mb-4 sm:leading-[1.15]">
               A Black mais esperada do ano está chegando.
             </h2>
             <p className="mb-5 max-w-[52ch] text-pretty text-[0.95rem] leading-[1.7] text-foreground/80 sm:mb-6 sm:text-[1.05rem] sm:leading-[1.75]">
@@ -323,7 +324,19 @@ function Index() {
               *Vagas/participação limitada à comunidade.
             </p>
           </div>
+          <img
+            src={produtosAsset.url}
+            alt="Linha de produtos Reline"
+            loading="lazy"
+            className="mx-auto mt-10 w-full max-w-[420px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.45)] lg:hidden"
+          />
         </div>
+        <img
+          src={produtosAsset.url}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-6 right-[3%] hidden w-[min(34vw,480px)] drop-shadow-[0_24px_40px_rgba(0,0,0,0.5)] lg:block"
+        />
       </section>
 
       {/* Campanha — seção oculta por solicitação; para reativar, mude SHOW_CAMPANHA para true */}
