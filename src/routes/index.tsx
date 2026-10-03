@@ -286,40 +286,40 @@ function Index() {
           aria-hidden="true"
         />
         <div className="grain" aria-hidden="true" />
-        <div className="container-page relative py-20">
+        <div className="container-page relative py-14 sm:py-20">
           <div className="max-w-[620px]">
-            <img src={logoAsset.url} alt="Reline" className="mb-6 h-8 w-auto" />
+            <img src={logoAsset.url} alt="Reline" className="mb-5 h-7 w-auto sm:mb-6 sm:h-8" />
             <h1 className="m-0">
               <span className="sr-only">Black November Reline 2026</span>
               <span
                 aria-hidden="true"
-                className="font-black-novembro text-metal block text-[clamp(4rem,9.5vw,8.5rem)] leading-[0.86]"
+                className="font-black-novembro text-metal block text-[clamp(3.4rem,17vw,8.5rem)] leading-[0.9] sm:leading-[0.86]"
               >
                 BLACK
               </span>
               <span
                 aria-hidden="true"
-                className="font-black-novembro mb-8 mt-1 block text-[clamp(1.9rem,4.5vw,3.6rem)] uppercase leading-[1.05] text-rose-pale"
+                className="font-black-novembro mb-6 mt-1 block text-[clamp(1.6rem,8vw,3.6rem)] uppercase leading-[1.05] text-rose-pale sm:mb-8"
               >
                 novembro
               </span>
             </h1>
 
-            <h2 className="font-black-novembro mb-4 text-pretty text-[clamp(1.4rem,2.4vw,2rem)] uppercase leading-[1.15] text-card-foreground">
+            <h2 className="font-black-novembro mb-3 text-pretty text-[clamp(1.2rem,4.6vw,2rem)] uppercase leading-[1.25] text-card-foreground sm:mb-4 sm:leading-[1.15]">
               A Black mais esperada do ano está chegando.
             </h2>
-            <p className="mb-6 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
+            <p className="mb-5 max-w-[52ch] text-pretty text-[0.95rem] leading-[1.7] text-foreground/80 sm:mb-6 sm:text-[1.05rem] sm:leading-[1.75]">
               <strong className="font-semibold text-foreground">E quem estiver na comunidade vai saber primeiro.</strong>{"\u00a0"}
               A partir de 04 de novembro, a Reline preparou uma Black especial com <strong className="font-semibold text-foreground">descontos progressivos</strong> para você cuidar dos seus cabelos e aproveitar condições que não estarão disponíveis o ano todo.
             </p>
-            <p className="mb-9 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
+            <p className="mb-7 max-w-[52ch] text-pretty text-[0.95rem] leading-[1.7] text-foreground/80 sm:mb-9 sm:text-[1.05rem] sm:leading-[1.75]">
               Entre para a comunidade e receba tudo em primeira mão.
             </p>
 
-            <WhatsAppButton href="#cadastro" size="lg" onClick={() => track("offer_click")}>
+            <WhatsAppButton href="#cadastro" size="lg" className="w-full sm:w-auto" onClick={() => track("offer_click")}>
               Quero entrar na comunidade
             </WhatsAppButton>
-            <p className="mt-4 text-[0.78rem] text-muted-foreground">
+            <p className="mt-4 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.78rem]">
               *Vagas/participação limitada à comunidade.
             </p>
           </div>
