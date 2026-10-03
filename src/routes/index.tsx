@@ -547,8 +547,8 @@ function Index() {
             <p className="mx-auto mt-4 max-w-[54ch] text-pretty text-[1.08rem] font-semibold leading-[1.65] text-slate-body">
               Descontos progressivos e condições especiais em lives exclusivas. Surpresas especiais para a comunidade.&nbsp;
             </p>
-            <div className="mb-9 mt-8 flex flex-wrap items-stretch justify-center gap-2.5">
-              <div className="mr-1.5 flex flex-none flex-col justify-center border-r border-cocoa/25 py-3 pr-6 text-left">
+            <div className="mx-auto mb-9 mt-8 flex max-w-[340px] flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-stretch sm:justify-center sm:gap-2.5">
+              <div className="flex flex-none flex-col items-center justify-center py-1 text-center sm:mr-1.5 sm:py-3 sm:pr-6 sm:text-left sm:border-r sm:border-cocoa/25">
                 <span className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-rose-dk">
                   Começa em
                 </span>
@@ -556,19 +556,21 @@ function Index() {
                   04.11
                 </strong>
               </div>
-              {clock.map((unit) => (
-                <div
-                  key={unit.k}
-                  className="min-w-[76px] rounded-xl border border-cocoa/20 bg-white/80 px-2 py-3 text-center"
-                >
-                  <strong className="block text-[1.75rem] font-extrabold leading-[1.1] tabular-nums text-graphite">
-                    {unit.v}
-                  </strong>
-                  <span className="text-[0.58rem] font-bold uppercase tracking-[0.14em] text-cocoa">
-                    {unit.k}
-                  </span>
-                </div>
-              ))}
+              <div className="flex items-stretch justify-center gap-2 sm:gap-2.5">
+                {clock.map((unit) => (
+                  <div
+                    key={unit.k}
+                    className="min-w-0 flex-1 rounded-xl border border-cocoa/20 bg-white/80 px-1 py-3 text-center sm:w-[76px] sm:min-w-[76px] sm:flex-none sm:px-2"
+                  >
+                    <strong className="block text-[1.5rem] font-extrabold leading-[1.1] tabular-nums text-graphite sm:text-[1.75rem]">
+                      {unit.v}
+                    </strong>
+                    <span className="text-[0.58rem] font-bold uppercase tracking-[0.14em] text-cocoa">
+                      {unit.k}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="flex justify-center">
               <a href="#cadastro" className="btn-cta" onClick={() => track("offer_click")}>
