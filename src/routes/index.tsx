@@ -162,7 +162,7 @@ function Index() {
   const registrar = useServerFn(trackEvent);
   const [nome, setNome] = useState("");
   const [zap, setZap] = useState("");
-  const [insta, setInsta] = useState("");
+  const [email, setEmail] = useState("");
   const [erro, setErro] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [sent, setSent] = useState(false);
@@ -213,13 +213,19 @@ function Index() {
       return;
     }
 
+    const emailLimpo = email.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailLimpo) || emailLimpo.length > 255) {
+      setErro("Informe um e-mail válido.");
+      return;
+    }
+
     setEnviando(true);
     try {
       const res = await enviarLead({
         data: {
           nome: nome.trim().slice(0, 100),
           whatsapp: zap.trim().slice(0, 25),
-          instagram: insta.trim().slice(0, 60),
+          email: emailLimpo,
         },
       });
       if (!res.ok) {
@@ -579,14 +585,14 @@ function Index() {
               </label>
               <label className="flex flex-col gap-2">
                 <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-rose-lt/80">
-                  Instagram
+                  E-mail
                 </span>
                 <input
-                  type="text"
-                  value={insta}
-                  maxLength={60}
-                  onChange={(e) => setInsta(e.target.value)}
-                  placeholder="@seuperfil"
+                  type="email"
+                  value={email}
+                  maxLength={255}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="seu@email.com"
                   className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
                 />
               </label>
@@ -600,7 +606,7 @@ function Index() {
               </button>
             </form>
             <p className="mt-5 text-[0.78rem] leading-[1.6] text-muted-foreground">
-              *Ao enviar, você concorda com o uso dos seus dados (nome, WhatsApp e Instagram)
+              *Ao enviar, você concorda com o uso dos seus dados (nome, WhatsApp e e-mail)
               exclusivamente para o envio das condições da campanha e contato da Renata Fraga Hair
               Spa, conforme a LGPD (Lei nº 13.709/2018) e a nossa{" "}
               <Link to="/privacidade" className="underline underline-offset-2 hover:text-rose-lt">

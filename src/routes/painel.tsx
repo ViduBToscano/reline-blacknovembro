@@ -28,8 +28,8 @@ function formatDate(iso: string) {
 
 function toCsv(leads: Lead[]) {
   const rows = [
-    ["Data", "Nome", "WhatsApp", "Instagram"],
-    ...leads.map((l) => [formatDate(l.created_at), l.nome, l.whatsapp, l.instagram ?? ""]),
+    ["Data", "Nome", "WhatsApp", "E-mail"],
+    ...leads.map((l) => [formatDate(l.created_at), l.nome, l.whatsapp, l.email ?? ""]),
   ];
   return rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(";")).join("\n");
 }
@@ -175,7 +175,7 @@ function Painel() {
                 <th className="px-4 py-3">Data</th>
                 <th className="px-4 py-3">Nome</th>
                 <th className="px-4 py-3">WhatsApp</th>
-                <th className="px-4 py-3">Instagram</th>
+                <th className="px-4 py-3">E-mail</th>
               </tr>
             </thead>
             <tbody className="text-card-foreground">
@@ -193,7 +193,7 @@ function Painel() {
                     </td>
                     <td className="px-4 py-3">{l.nome}</td>
                     <td className="whitespace-nowrap px-4 py-3">{l.whatsapp}</td>
-                    <td className="px-4 py-3">{l.instagram ?? "—"}</td>
+                    <td className="px-4 py-3">{l.email ?? "—"}</td>
                   </tr>
                 ))
               )}

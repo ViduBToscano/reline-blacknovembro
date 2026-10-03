@@ -14,7 +14,12 @@ const leadSchema = z.object({
     .min(8, "Informe um WhatsApp válido")
     .max(25)
     .regex(/^[0-9()+\-\s]+$/, "Informe um WhatsApp válido"),
-  instagram: z.string().trim().max(60).optional().default(""),
+  email: z
+    .string()
+    .trim()
+    .min(3, "Informe um e-mail válido")
+    .max(255, "E-mail muito longo")
+    .email("Informe um e-mail válido"),
 });
 
 const sessionConfig = {
@@ -53,7 +58,7 @@ export const submitLead = createServerFn({ method: "POST" })
     const { error } = await supabase.from("leads").insert({
       nome: data.nome,
       whatsapp: data.whatsapp,
-      instagram: data.instagram || null,
+      email: data.email,
     });
 
     if (error) {
@@ -85,7 +90,7 @@ export type Lead = {
   id: string;
   nome: string;
   whatsapp: string;
-  instagram: string | null;
+  email: string | null;
   created_at: string;
 };
 
@@ -97,7 +102,7 @@ export const getLeads = createServerFn({ method: "GET" }).handler(async () => {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { data, error } = await supabaseAdmin
     .from("leads")
-    .select("id, nome, whatsapp, instagram, created_at")
+    .select("id, nome, whatsapp, email, created_at")
     .order("created_at", { ascending: false })
     .limit(2000);
 
