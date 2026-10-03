@@ -309,7 +309,7 @@ function Index() {
               A Black mais esperada do ano está chegando.
             </h2>
             <p className="mb-6 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
-              <strong className="font-semibold text-foreground">E quem estiver na comunidade vai saber primeiro.</strong>{" "}
+              <strong className="font-semibold text-foreground">E quem estiver na comunidade vai saber primeiro.</strong>{"\u00a0"}
               A partir de 04 de novembro, a Reline preparou uma Black especial com <strong className="font-semibold text-foreground">descontos progressivos</strong> para você cuidar dos seus cabelos e aproveitar condições que não estarão disponíveis o ano todo.
             </p>
             <p className="mb-9 max-w-[52ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
