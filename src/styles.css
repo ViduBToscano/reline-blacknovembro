@@ -133,7 +133,7 @@
     oklch(0.12 0.004 40 / 30%) 48%,
     transparent 63%
   );
-  --grad-hero-mobile: linear-gradient(to bottom, transparent 35%, oklch(0.1419 0.0043 50.48 / 45%) 58%, var(--background) 83%), linear-gradient(to right, oklch(0.12 0.004 40 / 76%), transparent 62%);
+  --grad-hero-mobile: linear-gradient(to bottom, transparent 55%, var(--background) 100%), linear-gradient(to right, oklch(0.12 0.004 40 / 76%), transparent 55%);
   --grad-step-circle: linear-gradient(135deg, var(--rose-lt), var(--rose));
   --glow-rose: radial-gradient(circle, oklch(0.6317 0.0943 28.4 / 18%) 0%, transparent 66%);
   --hairline-rose: linear-gradient(
@@ -226,24 +226,25 @@
 .campaign-hero-copy { width: 400px; max-width: 45%; text-align: center; }
 .campaign-hero-logo { width: 180px; height: auto; margin: 0 auto 8px; }
 .campaign-hero-title { font-size: 94px; line-height: 1; }
-.campaign-hero-offer { display: grid; grid-template-columns: 45px minmax(0, 1fr); align-items: center; column-gap: 8px; margin: 14px 0 20px; }
+.campaign-hero-offer { display: grid; grid-template-columns: 35px minmax(0, 1fr) 80px; align-items: end; column-gap: 6px; margin: 20px 0 24px; }
 .campaign-hero-up-to { font-size: 23px; align-self: start; margin-top: 28px; color: var(--foreground); }
 .campaign-hero-offer img { width: 100%; height: auto; }
-.campaign-hero-off { grid-column: 2; font-size: 27px; line-height: 1.1; font-weight: 600; color: var(--rose-pale); margin-top: 4px; }
+.campaign-hero-off { font-size: 40px; line-height: 1; font-weight: 600; color: var(--rose-pale); padding-bottom: 6px; }
 .campaign-hero-invite { font-size: 15px; line-height: 1.6; max-width: 36ch; margin: 0 auto 20px; }
 
 @media (max-width: 767px) {
-  .campaign-hero { min-height: 560px; }
-  .campaign-hero-photo { height: 350px; object-position: 75% top; }
-  .campaign-hero-scrim { background: var(--grad-hero-mobile); }
-  .campaign-hero-inner { padding-top: 28px; padding-bottom: 32px; }
+  .campaign-hero { min-height: 0; }
+  .campaign-hero-photo { height: 280px; object-position: 75% top; }
+  .campaign-hero-scrim { height: 280px; background: var(--grad-hero-mobile); }
+  .campaign-hero-inner { padding-top: 24px; padding-bottom: 28px; }
   .campaign-hero-copy { width: 100%; max-width: 100%; }
-  .campaign-hero-logo { width: 118px; margin: 0 0 8px 6px; }
-  .campaign-hero-title { font-size: 48px; text-align: left; }
-  .campaign-hero-offer { width: 300px; max-width: 100%; grid-template-columns: 35px minmax(0, 1fr); margin: 134px auto 18px; }
-  .campaign-hero-up-to { font-size: 19px; margin-top: 20px; }
-  .campaign-hero-off { font-size: 23px; }
+  .campaign-hero-logo { width: 110px; margin: 0 0 8px 4px; }
+  .campaign-hero-title { font-size: 40px; text-align: left; }
+  .campaign-hero-offer { width: 330px; max-width: 100%; grid-template-columns: 28px minmax(0, 1fr) 70px; margin: 172px auto 20px; }
+  .campaign-hero-up-to { font-size: 17px; margin-top: 18px; }
+  .campaign-hero-off { font-size: 35px; padding-bottom: 4px; }
   .campaign-hero-invite { font-size: 14px; margin-bottom: 18px; }
+  .campaign-hero .btn-whatsapp { padding: 18px 12px; font-size: 13px; gap: 8px; min-height: 58px; white-space: nowrap; }
 }
 
 @utility btn-cta {
