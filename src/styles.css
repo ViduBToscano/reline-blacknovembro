@@ -133,7 +133,7 @@
     oklch(0.12 0.004 40 / 30%) 48%,
     transparent 63%
   );
-  --grad-hero-mobile: linear-gradient(to bottom, transparent 55%, var(--background) 100%), linear-gradient(to right, oklch(0.12 0.004 40 / 76%), transparent 55%);
+   --grad-hero-mobile: linear-gradient(to bottom, transparent 20%, oklch(0.12 0.004 40 / 35%) 38%, oklch(0.12 0.004 40 / 78%) 65%, oklch(0.12 0.004 40 / 90%) 100%);
   --grad-step-circle: linear-gradient(135deg, var(--rose-lt), var(--rose));
   --glow-rose: radial-gradient(circle, oklch(0.6317 0.0943 28.4 / 18%) 0%, transparent 66%);
   --hairline-rose: linear-gradient(
@@ -240,13 +240,13 @@
 
 @media (max-width: 767px) {
   .campaign-hero { min-height: 0; }
-  .campaign-hero-photo { height: 280px; object-position: 75% top; }
-  .campaign-hero-scrim { height: 280px; background: var(--grad-hero-mobile); }
-  .campaign-hero-inner { padding-top: 24px; padding-bottom: 28px; }
+  .campaign-hero-photo { height: 100%; object-position: 67% top; }
+  .campaign-hero-scrim { height: 100%; background: var(--grad-hero-mobile); }
+  .campaign-hero-inner { padding-top: 230px; padding-bottom: 28px; }
   .campaign-hero-copy { width: 100%; max-width: 100%; }
-  .campaign-hero-logo { width: 110px; margin: 0 0 8px 4px; }
-  .campaign-hero-title { font-size: 40px; text-align: left; }
-  .campaign-hero-offer { width: 330px; max-width: 100%; grid-template-columns: 28px minmax(0, 1fr) 70px; margin: 172px auto 20px; }
+  .campaign-hero-logo { width: 130px; margin: 0 auto 4px; }
+  .campaign-hero-title { font-size: 56px; text-align: center; }
+  .campaign-hero-offer { width: 330px; max-width: 100%; grid-template-columns: 28px minmax(0, 1fr) 70px; margin: 12px auto 20px; }
   .campaign-hero-up-to { font-size: 17px; margin-top: 18px; }
   .campaign-hero-off { font-size: 35px; padding-bottom: 4px; }
   .campaign-hero-invite { font-size: 14px; margin-bottom: 18px; }
