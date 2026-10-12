@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep interactive before-and-after image comparison encapsulated in the reusable Reline slider component so pointer, touch, and keyboard behavior stay consistent.
+- Keep campaign hero image framing and localized contrast in dedicated global hero classes, separate from its content, so desktop and mobile can protect the portrait without changing campaign copy.

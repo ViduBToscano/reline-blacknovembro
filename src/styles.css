@@ -128,10 +128,12 @@
   --grad-panel-c: linear-gradient(165deg, var(--ink-2) 0%, var(--ink) 50%, var(--ink-3) 100%);
   --grad-hero-scrim: linear-gradient(
     to right,
-    oklch(0.12 0.004 40 / 92%) 0%,
-    oklch(0.12 0.004 40 / 70%) 45%,
-    oklch(0.12 0.004 40 / 25%) 100%
+    oklch(0.12 0.004 40 / 90%) 0%,
+    oklch(0.12 0.004 40 / 75%) 30%,
+    oklch(0.12 0.004 40 / 30%) 48%,
+    transparent 63%
   );
+  --grad-hero-mobile: linear-gradient(to bottom, transparent 35%, oklch(0.1419 0.0043 50.48 / 45%) 58%, var(--background) 83%), linear-gradient(to right, oklch(0.12 0.004 40 / 76%), transparent 62%);
   --grad-step-circle: linear-gradient(135deg, var(--rose-lt), var(--rose));
   --glow-rose: radial-gradient(circle, oklch(0.6317 0.0943 28.4 / 18%) 0%, transparent 66%);
   --hairline-rose: linear-gradient(
@@ -215,6 +217,33 @@
   font-style: italic;
   font-weight: 600;
   letter-spacing: 0;
+}
+
+.campaign-hero { min-height: 590px; }
+.campaign-hero-photo { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; object-position: center 35%; }
+.campaign-hero-scrim { position: absolute; inset: 0; background: var(--grad-hero-scrim); }
+.campaign-hero-inner { padding-top: 42px; padding-bottom: 42px; }
+.campaign-hero-copy { width: 440px; max-width: 45%; text-align: center; }
+.campaign-hero-logo { width: 210px; height: auto; margin: 0 auto 8px; }
+.campaign-hero-title { font-size: 108px; line-height: 1; }
+.campaign-hero-offer { display: grid; grid-template-columns: 45px minmax(0, 1fr); align-items: center; column-gap: 8px; margin: 14px 0 20px; }
+.campaign-hero-up-to { font-size: 23px; align-self: start; margin-top: 28px; color: var(--foreground); }
+.campaign-hero-offer img { width: 100%; height: auto; }
+.campaign-hero-off { grid-column: 2; font-size: 27px; line-height: 1.1; font-weight: 600; color: var(--rose-pale); margin-top: 4px; }
+.campaign-hero-invite { font-size: 15px; line-height: 1.6; max-width: 36ch; margin: 0 auto 20px; }
+
+@media (max-width: 767px) {
+  .campaign-hero { min-height: 560px; }
+  .campaign-hero-photo { height: 350px; object-position: 75% top; }
+  .campaign-hero-scrim { background: var(--grad-hero-mobile); }
+  .campaign-hero-inner { padding-top: 28px; padding-bottom: 32px; }
+  .campaign-hero-copy { width: 100%; max-width: 100%; }
+  .campaign-hero-logo { width: 118px; margin: 0 0 8px 6px; }
+  .campaign-hero-title { font-size: 62px; text-align: left; }
+  .campaign-hero-offer { width: 300px; max-width: 100%; grid-template-columns: 35px minmax(0, 1fr); margin: 120px auto 18px; }
+  .campaign-hero-up-to { font-size: 19px; margin-top: 20px; }
+  .campaign-hero-off { font-size: 23px; }
+  .campaign-hero-invite { font-size: 14px; margin-bottom: 18px; }
 }
 
 @utility btn-cta {
