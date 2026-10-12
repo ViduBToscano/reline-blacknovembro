@@ -29,10 +29,10 @@ export function BeforeAfterSlider({ before, after, alt }: BeforeAfterSliderProps
           aria-hidden="true"
         />
 
-        <span className="absolute left-3 top-3 rounded-full bg-ink/80 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-cream-lt backdrop-blur-sm">
+        <span className="absolute left-2 top-3 rounded-full bg-ink/80 px-2 py-1 text-[0.5rem] font-bold uppercase text-cream-lt backdrop-blur-sm sm:left-3 sm:px-3 sm:text-[0.68rem]">
           Antes
         </span>
-        <span className="absolute right-3 top-3 rounded-full bg-ink/80 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-cream-lt backdrop-blur-sm">
+        <span className="absolute right-2 top-3 rounded-full bg-ink/80 px-2 py-1 text-[0.5rem] font-bold uppercase text-cream-lt backdrop-blur-sm sm:right-3 sm:px-3 sm:text-[0.68rem]">
           Depois
         </span>
 
