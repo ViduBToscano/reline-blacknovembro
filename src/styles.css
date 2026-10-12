@@ -286,6 +286,19 @@
     padding-inline: 1.25rem;
     text-align: center;
   }
+
+  :root {
+    --grad-hero-scrim: linear-gradient(
+        to bottom,
+        oklch(0.12 0.004 40 / 94%) 0%,
+        oklch(0.12 0.004 40 / 84%) 50%,
+        oklch(0.12 0.004 40 / 92%) 100%
+      ),
+      linear-gradient(
+        oklch(0.11 0.004 40 / 40%),
+        oklch(0.11 0.004 40 / 40%)
+      );
+  }
 }
 
 @keyframes marquee {
