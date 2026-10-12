@@ -231,6 +231,12 @@
 .campaign-hero-offer img { width: 100%; height: auto; }
 .campaign-hero-off { font-size: 40px; line-height: 1; font-weight: 600; color: var(--rose-pale); padding-bottom: 6px; }
 .campaign-hero-invite { font-size: 15px; line-height: 1.6; max-width: 36ch; margin: 0 auto 20px; }
+.campaign-hero .btn-whatsapp { padding: 18px 12px; font-size: 14px; gap: 8px; min-height: 58px; white-space: nowrap; }
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .campaign-hero-title { font-size: 78px; }
+  .campaign-hero .btn-whatsapp { font-size: 12px; }
+}
 
 @media (max-width: 767px) {
   .campaign-hero { min-height: 0; }
