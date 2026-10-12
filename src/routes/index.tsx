@@ -14,6 +14,8 @@ import resultado04Antes from "@/assets/resultado-04-antes.webp.asset.json";
 import resultado04Depois from "@/assets/resultado-04-depois.webp.asset.json";
 import resultado05Antes from "@/assets/resultado-05-antes.webp.asset.json";
 import resultado05Depois from "@/assets/resultado-05-depois.webp.asset.json";
+import resultado06Antes from "@/assets/resultado-06-antes.webp.asset.json";
+import resultado06Depois from "@/assets/resultado-06-depois.webp.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
@@ -56,6 +58,7 @@ const BEFORE_AFTER_RESULTS = [
   { before: resultado03Antes.url, after: resultado03Depois.url, alt: "Resultado real 03" },
   { before: resultado04Antes.url, after: resultado04Depois.url, alt: "Resultado real 04" },
   { before: resultado05Antes.url, after: resultado05Depois.url, alt: "Resultado real 05" },
+  { before: resultado06Antes.url, after: resultado06Depois.url, alt: "Resultado real 06" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -443,13 +446,6 @@ function Index() {
                 <BeforeAfterSlider {...result} />
               </Reveal>
             ))}
-            <Reveal delay={400}>
-              <figure className="rounded-3xl border border-dashed border-border bg-card p-3">
-                <div className="flex aspect-[3/4] items-center justify-center rounded-2xl bg-background">
-                  <span className="text-sm text-muted-foreground">Em breve</span>
-                </div>
-              </figure>
-            </Reveal>
           </div>
         </div>
       </section>
