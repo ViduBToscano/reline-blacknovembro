@@ -10,8 +10,8 @@ export function BeforeAfterSlider({ before, after, alt }: BeforeAfterSliderProps
   const [position, setPosition] = useState(50);
 
   return (
-    <figure className="overflow-hidden rounded-3xl bg-white p-3 shadow-[var(--shadow-soft)]">
-      <div className="group relative aspect-[4/5] touch-pan-y select-none overflow-hidden rounded-2xl bg-sand">
+    <figure className="overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-[var(--shadow-soft)]">
+      <div className="group relative aspect-[3/4] touch-pan-y select-none overflow-hidden rounded-2xl bg-background">
         <img
           src={after}
           alt={`${alt}: depois`}

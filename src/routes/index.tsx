@@ -4,14 +4,16 @@ import dep3 from "@/assets/depoimento-3.mp4.asset.json";
 import poster1 from "@/assets/depoimento-poster-1.jpg.asset.json";
 import poster2 from "@/assets/depoimento-poster-2.jpg.asset.json";
 import poster3 from "@/assets/depoimento-poster-3.jpg.asset.json";
-import felipeAntes from "@/assets/felipe-saraiva-antes.jpg.asset.json";
-import felipeDepois from "@/assets/felipe-saraiva-depois.jpg.asset.json";
-import janeiroAntes from "@/assets/janeiro-antes.jpg.asset.json";
-import janeiroDepois from "@/assets/janeiro-depois.jpg.asset.json";
-import julianaAntes from "@/assets/juliana-santos-antes.jpg.asset.json";
-import julianaDepois from "@/assets/juliana-santos-depois.jpg.asset.json";
-import patriciaAntes from "@/assets/patricia-pinho-antes.jpg.asset.json";
-import patriciaDepois from "@/assets/patricia-pinho-depois.jpg.asset.json";
+import resultado01Antes from "@/assets/resultado-01-antes.webp.asset.json";
+import resultado01Depois from "@/assets/resultado-01-depois.webp.asset.json";
+import resultado02Antes from "@/assets/resultado-02-antes.webp.asset.json";
+import resultado02Depois from "@/assets/resultado-02-depois.webp.asset.json";
+import resultado03Antes from "@/assets/resultado-03-antes.webp.asset.json";
+import resultado03Depois from "@/assets/resultado-03-depois.webp.asset.json";
+import resultado04Antes from "@/assets/resultado-04-antes.webp.asset.json";
+import resultado04Depois from "@/assets/resultado-04-depois.webp.asset.json";
+import resultado05Antes from "@/assets/resultado-05-antes.webp.asset.json";
+import resultado05Depois from "@/assets/resultado-05-depois.webp.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
@@ -49,10 +51,11 @@ const TESTIMONIALS = [
 ];
 
 const BEFORE_AFTER_RESULTS = [
-  { before: felipeAntes.url, after: felipeDepois.url, alt: "Resultado real de tratamento capilar" },
-  { before: janeiroAntes.url, after: janeiroDepois.url, alt: "Resultado real em cabelo longo" },
-  { before: julianaAntes.url, after: julianaDepois.url, alt: "Resultado real em cabelo cacheado" },
-  { before: patriciaAntes.url, after: patriciaDepois.url, alt: "Resultado real em cabelo curto e cacheado" },
+  { before: resultado01Antes.url, after: resultado01Depois.url, alt: "Resultado real 01" },
+  { before: resultado02Antes.url, after: resultado02Depois.url, alt: "Resultado real 02" },
+  { before: resultado03Antes.url, after: resultado03Depois.url, alt: "Resultado real 03" },
+  { before: resultado04Antes.url, after: resultado04Depois.url, alt: "Resultado real 04" },
+  { before: resultado05Antes.url, after: resultado05Depois.url, alt: "Resultado real 05" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -375,7 +378,7 @@ function Index() {
 
 
       {/* Comunidade VIP */}
-      <section className="relative overflow-hidden bg-cream px-5 py-20">
+      <section className="relative overflow-hidden bg-background px-5 py-20">
         <div
           className="absolute -bottom-[25vw] -left-[20vw] h-[55vw] w-[55vw]"
           style={{ background: "var(--glow-rose)" }}
@@ -383,11 +386,11 @@ function Index() {
         />
         <div className="container-page relative">
           <Reveal className="mx-auto mb-14 max-w-[780px] text-center">
-            <span className="eyebrow mb-4 text-cocoa">Comunidade VIP</span>
-            <h2 className="mb-5 text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
+            <span className="eyebrow mb-4 text-rose-lt">Comunidade VIP</span>
+            <h2 className="mb-5 text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
               Por que entrar na comunidade?
             </h2>
-            <p className="text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+            <p className="text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               Não é apenas mais um grupo de ofertas. É o lugar onde você vai receber:
             </p>
           </Reveal>
@@ -403,17 +406,17 @@ function Index() {
             <div className="grid gap-4 sm:grid-cols-2">
               {PERKS.map((perk, i) => (
                 <Reveal key={perk.n} delay={i * 90}>
-                  <div className="h-full rounded-2xl bg-white px-5 py-5 shadow-[var(--shadow-soft)]">
+                  <div className="h-full rounded-2xl border border-border bg-card px-5 py-5 shadow-[var(--shadow-soft)]">
                     <span
                       className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-[0.8rem] font-extrabold text-cream-lt"
                       style={{ background: "var(--grad-step-circle)" }}
                     >
                       {perk.n}
                     </span>
-                    <h3 className="mb-1.5 text-[0.98rem] font-bold leading-[1.25] text-graphite">
+                    <h3 className="mb-1.5 text-[0.98rem] font-bold leading-[1.25] text-card-foreground">
                       {perk.t}
                     </h3>
-                    <p className="text-pretty text-[0.85rem] leading-[1.55] text-slate-body">
+                    <p className="text-pretty text-[0.85rem] leading-[1.55] text-foreground/80">
                       {perk.d}
                     </p>
                   </div>
@@ -425,21 +428,28 @@ function Index() {
       </section>
 
       {/* Antes e depois */}
-      <section className="relative bg-cream px-5 py-20">
+      <section className="relative bg-background px-5 py-20">
         <div className="container-page relative">
           <Reveal className="mx-auto mb-12 max-w-[780px] text-center">
-            <span className="eyebrow mb-4 text-cocoa">Antes e depois</span>
-            <h2 className="text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
+            <span className="eyebrow mb-4 text-rose-lt">Antes e depois</span>
+            <h2 className="text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
               Resultados reais de quem usa e aprova Reline há 9 anos.
             </h2>
           </Reveal>
 
-          <div className="mx-auto grid w-full max-w-[640px] gap-5 sm:grid-cols-2">
+          <div className="mx-auto grid w-full max-w-[780px] grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
             {BEFORE_AFTER_RESULTS.map((result, i) => (
               <Reveal key={result.before} delay={i * 80}>
                 <BeforeAfterSlider {...result} />
               </Reveal>
             ))}
+            <Reveal delay={400}>
+              <figure className="rounded-3xl border border-dashed border-border bg-card p-3">
+                <div className="flex aspect-[3/4] items-center justify-center rounded-2xl bg-background">
+                  <span className="text-sm text-muted-foreground">Em breve</span>
+                </div>
+              </figure>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -462,7 +472,7 @@ function Index() {
           <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={i} delay={i * 90}>
-                <figure className="flex h-full flex-col rounded-3xl bg-white p-3 shadow-[var(--shadow-soft)]">
+                <figure className="flex h-full flex-col rounded-3xl border border-border bg-card p-3 shadow-[var(--shadow-soft)]">
                   <video
                     src={t.video}
                     poster={t.poster}
@@ -479,10 +489,10 @@ function Index() {
       </section>
 
       {/* Linha Reline */}
-      <section className="relative bg-cream px-5 py-20">
+      <section className="relative bg-background px-5 py-20">
         <div className="container-page grid items-center gap-12 sm:gap-16 lg:grid-cols-[minmax(320px,1.1fr)_minmax(360px,1fr)] lg:gap-20">
           <Reveal>
-            <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-sand shadow-[var(--shadow-soft)]">
+            <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)]">
               <img
                 src={portraitAsset.url}
                 alt="Renata Fraga e a linha Reline no Hair Spa"
@@ -493,30 +503,30 @@ function Index() {
           </Reveal>
           <Reveal delay={120}>
             
-            <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-graphite">
+            <h2 className="mb-6 text-pretty text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.2] text-card-foreground">
               Renata Fraga 15 anos de Transformação capilar
             </h2>
-            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               Renata Fraga é tricologista e terapeuta capilar, com 15 anos de experiência no mercado
               e uma trajetória dedicada à saúde e transformação dos cabelos.
             </p>
-            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               À frente de seu espaço em Belo Horizonte, já atendeu mais de{" "}
-              <strong className="font-extrabold text-cocoa">12 mil pessoas</strong>, incluindo
+              <strong className="font-extrabold text-rose-lt">12 mil pessoas</strong>, incluindo
               celebridades como{" "}
-              <strong className="font-extrabold text-cocoa">Hulk Paraíba</strong>,{" "}
-              <strong className="font-extrabold text-cocoa">Dani Cicarelli</strong>,{" "}
-              <strong className="font-extrabold text-cocoa">Ticiane Pinheiro</strong>,{" "}
-              <strong className="font-extrabold text-cocoa">Shantal</strong>,{" "}
-              <strong className="font-extrabold text-cocoa">Carol Marra</strong> e{" "}
-              <strong className="font-extrabold text-cocoa">Juju Norremose</strong>.
+              <strong className="font-extrabold text-rose-lt">Hulk Paraíba</strong>,{" "}
+              <strong className="font-extrabold text-rose-lt">Dani Cicarelli</strong>,{" "}
+              <strong className="font-extrabold text-rose-lt">Ticiane Pinheiro</strong>,{" "}
+              <strong className="font-extrabold text-rose-lt">Shantal</strong>,{" "}
+              <strong className="font-extrabold text-rose-lt">Carol Marra</strong> e{" "}
+              <strong className="font-extrabold text-rose-lt">Juju Norremose</strong>.
             </p>
-            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-slate-body">
+            <p className="mb-5 max-w-[56ch] text-pretty text-[1.05rem] leading-[1.75] text-foreground/80">
               Sua experiência no atendimento e sua busca constante por soluções para as diferentes
               necessidades dos cabelos deram origem à Reline, marca criada por Renata e totalmente
               dedicada ao tratamento do couro cabeludo e dos fios.
             </p>
-            <p className="max-w-[56ch] text-pretty text-[1.05rem] font-extrabold leading-[1.75] text-cocoa">
+            <p className="max-w-[56ch] text-pretty text-[1.05rem] font-extrabold leading-[1.75] text-rose-lt">
               Hoje, Renata une tricologia, experiência prática e inovação para transformar a forma
               como profissionais e clientes entendem e cuidam dos cabelos.
             </p>
@@ -532,7 +542,7 @@ function Index() {
       </section>
 
       {/* Banner OFF + contagem */}
-      <section className="relative overflow-hidden bg-cream px-5 py-16">
+      <section className="relative overflow-hidden bg-background px-5 py-16">
         <div
           className="absolute -top-[22vw] left-1/2 h-[55vw] w-[55vw] -translate-x-1/2"
           style={{ background: "var(--glow-rose)" }}
@@ -540,19 +550,19 @@ function Index() {
         />
         <div className="container-page relative text-center">
           <Reveal>
-            <span className="eyebrow mb-3 text-cocoa"></span>
-            <p className="font-black-novembro m-0 text-[clamp(3.4rem,10vw,7.8rem)] uppercase leading-[0.9] text-rose-dk">
+            <span className="eyebrow mb-3 text-rose-lt"></span>
+            <p className="font-black-novembro m-0 text-[clamp(3.4rem,10vw,7.8rem)] uppercase leading-[0.9] text-rose-lt">
               Até 80% off
             </p>
-            <p className="mx-auto mt-4 max-w-[54ch] text-pretty text-[1.08rem] font-semibold leading-[1.65] text-slate-body">
+            <p className="mx-auto mt-4 max-w-[54ch] text-pretty text-[1.08rem] font-semibold leading-[1.65] text-foreground/80">
               Descontos progressivos e condições especiais em lives exclusivas. Surpresas especiais para a comunidade.&nbsp;
             </p>
             <div className="mx-auto mb-9 mt-8 flex max-w-[340px] flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-stretch sm:justify-center sm:gap-2.5">
-              <div className="flex flex-none flex-col items-center justify-center py-1 text-center sm:mr-1.5 sm:py-3 sm:pr-6 sm:text-left sm:border-r sm:border-cocoa/25">
-                <span className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-rose-dk">
+              <div className="flex flex-none flex-col items-center justify-center py-1 text-center sm:mr-1.5 sm:py-3 sm:pr-6 sm:text-left sm:border-r sm:border-border">
+                <span className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-rose-lt">
                   Começa em
                 </span>
-                <strong className="text-[1.9rem] font-extrabold leading-none tracking-[-0.02em] text-graphite">
+                <strong className="text-[1.9rem] font-extrabold leading-none tracking-[-0.02em] text-card-foreground">
                   04.11
                 </strong>
               </div>
@@ -560,12 +570,12 @@ function Index() {
                 {clock.map((unit) => (
                   <div
                     key={unit.k}
-                    className="min-w-0 flex-1 rounded-xl border border-cocoa/20 bg-white/80 px-1 py-3 text-center sm:w-[76px] sm:min-w-[76px] sm:flex-none sm:px-2"
+                    className="min-w-0 flex-1 rounded-xl border border-border bg-card px-1 py-3 text-center sm:w-[76px] sm:min-w-[76px] sm:flex-none sm:px-2"
                   >
-                    <strong className="block text-[1.5rem] font-extrabold leading-[1.1] tabular-nums text-graphite sm:text-[1.75rem]">
+                    <strong className="block text-[1.5rem] font-extrabold leading-[1.1] tabular-nums text-card-foreground sm:text-[1.75rem]">
                       {unit.v}
                     </strong>
-                    <span className="text-[0.58rem] font-bold uppercase tracking-[0.14em] text-cocoa">
+                    <span className="text-[0.58rem] font-bold uppercase tracking-[0.14em] text-rose-lt">
                       {unit.k}
                     </span>
                   </div>
@@ -617,7 +627,7 @@ function Index() {
                   maxLength={100}
                   onChange={(e) => setNome(e.target.value)}
                   placeholder="Seu nome completo"
-                  className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
+                  className="rounded-xl border border-input bg-card px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
                 />
               </label>
               <label className="flex flex-col gap-2">
@@ -630,7 +640,7 @@ function Index() {
                   maxLength={25}
                   onChange={(e) => setZap(e.target.value)}
                   placeholder="(11) 99999-9999"
-                  className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
+                  className="rounded-xl border border-input bg-card px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
                 />
               </label>
               <label className="flex flex-col gap-2">
@@ -643,7 +653,7 @@ function Index() {
                   maxLength={255}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="seu@email.com"
-                  className="rounded-xl border border-input bg-white/5 px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
+                  className="rounded-xl border border-input bg-card px-[1.1rem] py-4 text-card-foreground outline-none focus:border-rose"
                 />
               </label>
               {erro && (
