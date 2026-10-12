@@ -129,9 +129,8 @@
   --grad-hero-scrim: linear-gradient(
     to right,
     oklch(0.12 0.004 40 / 92%) 0%,
-    oklch(0.12 0.004 40 / 72%) 42%,
-    oklch(0.12 0.004 40 / 15%) 72%,
-    transparent 100%
+    oklch(0.12 0.004 40 / 70%) 45%,
+    oklch(0.12 0.004 40 / 25%) 100%
   );
   --grad-step-circle: linear-gradient(135deg, var(--rose-lt), var(--rose));
   --glow-rose: radial-gradient(circle, oklch(0.6317 0.0943 28.4 / 18%) 0%, transparent 66%);
