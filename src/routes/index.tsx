@@ -29,7 +29,7 @@ import {
 } from "@/components/ui/dialog";
 import { submitLead, trackEvent } from "@/lib/leads.functions";
 
-import heroAsset from "@/assets/reline-hero.jpg.asset.json";
+import heroAsset from "@/assets/reline-hero-renata.jpg.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait-renata.jpg.asset.json";
 const produtosAsset = { url: "/produtos-reline.webp" };
@@ -285,7 +285,7 @@ function Index() {
       {/* Hero */}
       <section
         className="relative flex min-h-[92vh] items-center bg-background bg-cover"
-        style={{ backgroundImage: `url(${heroAsset.url})`, backgroundPosition: "72% center" }}
+        style={{ backgroundImage: `url(${heroAsset.url})`, backgroundPosition: "center" }}
       >
         <div
           className="absolute inset-0"
