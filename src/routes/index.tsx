@@ -283,12 +283,15 @@ function Index() {
       </div>
 
       {/* Hero */}
-      <section
-        className="relative flex min-h-[92vh] items-center bg-background bg-cover"
-        style={{ backgroundImage: `url(${heroAsset.url})`, backgroundPosition: "center" }}
-      >
+      <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-background">
+        <img
+          src={heroAsset.url}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 hidden h-full w-full object-cover object-center sm:block"
+        />
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden sm:block"
           style={{ background: "var(--grad-hero-scrim)" }}
           aria-hidden="true"
         />
@@ -329,6 +332,12 @@ function Index() {
             <p className="mt-4 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.78rem]">
               *Vagas/participação limitada à comunidade.
             </p>
+
+            <img
+              src={heroAsset.url}
+              alt="Renata Fraga no espaço Reline, entre prateleiras de produtos"
+              className="mt-9 w-full rounded-[26px] border border-border/60 object-cover sm:hidden"
+            />
           </div>
         </div>
       </section>
