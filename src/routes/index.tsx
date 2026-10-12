@@ -29,7 +29,8 @@ import {
 } from "@/components/ui/dialog";
 import { submitLead, trackEvent } from "@/lib/leads.functions";
 
-import heroAsset from "@/assets/reline-hero-renata.jpg.asset.json";
+import heroImage from "@/assets/hero-renata-expanded.webp";
+import offerAsset from "@/assets/80-metalico.webp.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait-renata.jpg.asset.json";
 const produtosAsset = { url: "/produtos-reline.webp" };
@@ -283,61 +284,37 @@ function Index() {
       </div>
 
       {/* Hero */}
-      <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-background">
+      <section className="campaign-hero relative overflow-hidden bg-background">
         <img
-          src={heroAsset.url}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 hidden h-full w-full object-cover object-center sm:block"
+          src={heroImage}
+          alt="Renata Fraga no espaço Reline, entre prateleiras de produtos"
+          className="campaign-hero-photo"
+          fetchPriority="high"
         />
-        <div
-          className="absolute inset-0 hidden sm:block"
-          style={{ background: "var(--grad-hero-scrim)" }}
-          aria-hidden="true"
-        />
-        <div className="grain" aria-hidden="true" />
-        <div className="container-page relative py-14 sm:py-20">
-          <div className="max-w-[620px]">
-            <img src={logoAsset.url} alt="Reline" className="mb-5 h-7 w-auto sm:mb-6 sm:h-8" />
-            <h1 className="m-0">
+        <div className="campaign-hero-scrim" aria-hidden="true" />
+        <div className="container-page relative campaign-hero-inner">
+          <div className="campaign-hero-copy">
+            <img src={logoAsset.url} alt="Reline" className="campaign-hero-logo" />
+            <h1 className="m-0 campaign-hero-title">
               <span className="sr-only">Black November Reline 2026</span>
               <span
                 aria-hidden="true"
-                className="font-black-novembro text-metal block text-[clamp(3.4rem,17vw,8.5rem)] leading-[0.9] sm:leading-[0.86]"
+                className="font-black-novembro text-metal block"
               >
                 BLACK
               </span>
-              <span
-                aria-hidden="true"
-                className="font-black-novembro mb-6 mt-1 block text-[clamp(1.6rem,8vw,3.6rem)] uppercase leading-[1.05] text-rose-pale sm:mb-8"
-              >
-                novembro
-              </span>
             </h1>
-
-            <h2 className="font-black-novembro mb-3 text-pretty text-[clamp(1.05rem,3.8vw,1.45rem)] uppercase leading-[1.3] text-card-foreground sm:mb-4 sm:leading-[1.15]">
-              A Black mais esperada do ano está chegando.
-            </h2>
-            <p className="mb-5 max-w-[52ch] text-pretty text-[0.95rem] leading-[1.7] text-foreground/80 sm:mb-6 sm:text-[1.05rem] sm:leading-[1.75]">
-              <strong className="font-semibold text-foreground">E quem estiver na comunidade vai saber primeiro.</strong>{"\u00a0"}
-              A partir de 04 de novembro, a Reline preparou uma Black especial com <strong className="font-semibold text-foreground">descontos progressivos</strong> para você cuidar dos seus cabelos e aproveitar condições que não estarão disponíveis o ano todo.
-            </p>
-            <p className="mb-7 max-w-[52ch] text-pretty text-[0.95rem] leading-[1.7] text-foreground/80 sm:mb-9 sm:text-[1.05rem] sm:leading-[1.75]">
+            <div className="campaign-hero-offer" role="img" aria-label="Até 80% OFF">
+              <span className="campaign-hero-up-to">Até</span>
+              <img src={offerAsset.url} alt="" aria-hidden="true" width="900" height="502" />
+              <span className="campaign-hero-off">OFF</span>
+            </div>
+            <p className="campaign-hero-invite text-foreground">
               Entre para a comunidade e receba tudo em primeira mão.
             </p>
-
-            <WhatsAppButton href="#cadastro" size="lg" className="w-full sm:w-auto" onClick={() => track("offer_click")}>
+            <WhatsAppButton href="#cadastro" size="lg" className="w-full" onClick={() => track("offer_click")}>
               Quero entrar na comunidade
             </WhatsAppButton>
-            <p className="mt-4 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.78rem]">
-              *Vagas/participação limitada à comunidade.
-            </p>
-
-            <img
-              src={heroAsset.url}
-              alt="Renata Fraga no espaço Reline, entre prateleiras de produtos"
-              className="mt-9 w-full rounded-[26px] border border-border/60 object-cover sm:hidden"
-            />
           </div>
         </div>
       </section>
