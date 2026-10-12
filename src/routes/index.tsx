@@ -31,6 +31,7 @@ import { submitLead, trackEvent } from "@/lib/leads.functions";
 
 import heroImage from "@/assets/hero-renata-expanded.webp";
 import offerAsset from "@/assets/80-metalico.webp.asset.json";
+import offerFlatAsset from "@/assets/80-chapado.webp.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
 import portraitAsset from "@/assets/reline-portrait-renata.jpg.asset.json";
 const produtosAsset = { url: "/produtos-reline.webp" };
@@ -383,12 +384,17 @@ function Index() {
               Não é apenas mais um grupo de ofertas. É o lugar onde você vai receber:
             </p>
           </Reveal>
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
-            <Reveal className="mx-auto w-full max-w-[440px] lg:max-w-none">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-14">
+            <Reveal className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
+              <div
+                className="absolute inset-[-12%] rounded-full"
+                style={{ background: "var(--glow-rose)" }}
+                aria-hidden="true"
+              />
               <img
                 src={produtosAsset.url}
                 alt="Produtos Reline para tratamento do couro cabeludo e dos fios"
-                className="w-full rounded-3xl"
+                className="relative w-full scale-[1.06] drop-shadow-[0_28px_60px_rgba(214,140,150,0.28)]"
                 loading="lazy"
               />
             </Reveal>
@@ -533,9 +539,23 @@ function Index() {
         <div className="container-page relative text-center">
           <Reveal>
             <span className="eyebrow mb-3 text-rose-lt"></span>
-            <p className="font-black-novembro m-0 text-[clamp(3.4rem,10vw,7.8rem)] uppercase leading-[0.9] text-rose-lt">
-              Até 80% off
-            </p>
+            <div className="flex flex-col items-center" role="img" aria-label="Até 80% OFF">
+              <span className="font-black-novembro text-metal text-[clamp(1.4rem,3.4vw,2.2rem)] uppercase leading-none">
+                Até
+              </span>
+              <div className="flex items-end justify-center gap-2 sm:gap-3">
+                <img
+                  src={offerFlatAsset.url}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-auto w-[min(72vw,420px)] drop-shadow-[0_18px_40px_rgba(214,140,150,0.35)]"
+                  loading="lazy"
+                />
+                <span className="font-black-novembro text-metal pb-1 text-[clamp(2.2rem,6vw,3.6rem)] uppercase leading-none">
+                  OFF
+                </span>
+              </div>
+            </div>
             <p className="mx-auto mt-4 max-w-[54ch] text-pretty text-[1.08rem] font-semibold leading-[1.65] text-foreground/80">
               Descontos progressivos e condições especiais em lives exclusivas. Surpresas especiais para a comunidade.&nbsp;
             </p>
