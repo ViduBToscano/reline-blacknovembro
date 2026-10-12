@@ -384,12 +384,17 @@ function Index() {
               Não é apenas mais um grupo de ofertas. É o lugar onde você vai receber:
             </p>
           </Reveal>
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
-            <Reveal className="mx-auto w-full max-w-[440px] lg:max-w-none">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-14">
+            <Reveal className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
+              <div
+                className="absolute inset-[-12%] rounded-full"
+                style={{ background: "var(--glow-rose)" }}
+                aria-hidden="true"
+              />
               <img
                 src={produtosAsset.url}
                 alt="Produtos Reline para tratamento do couro cabeludo e dos fios"
-                className="w-full rounded-3xl"
+                className="relative w-full scale-[1.06] drop-shadow-[0_28px_60px_rgba(214,140,150,0.28)]"
                 loading="lazy"
               />
             </Reveal>
