@@ -10,8 +10,8 @@ export function BeforeAfterSlider({ before, after, alt }: BeforeAfterSliderProps
   const [position, setPosition] = useState(50);
 
   return (
-    <figure className="overflow-hidden rounded-3xl bg-white p-3 shadow-[var(--shadow-soft)]">
-      <div className="group relative aspect-[4/5] touch-pan-y select-none overflow-hidden rounded-2xl bg-sand">
+    <figure className="overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-[var(--shadow-soft)]">
+      <div className="group relative aspect-[3/4] touch-pan-y select-none overflow-hidden rounded-2xl bg-background">
         <img
           src={after}
           alt={`${alt}: depois`}
@@ -29,10 +29,10 @@ export function BeforeAfterSlider({ before, after, alt }: BeforeAfterSliderProps
           aria-hidden="true"
         />
 
-        <span className="absolute left-3 top-3 rounded-full bg-ink/80 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-cream-lt backdrop-blur-sm">
+        <span className="absolute left-2 top-3 rounded-full bg-ink/80 px-2 py-1 text-[0.5rem] font-bold uppercase text-cream-lt backdrop-blur-sm sm:left-3 sm:px-3 sm:text-[0.68rem]">
           Antes
         </span>
-        <span className="absolute right-3 top-3 rounded-full bg-ink/80 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-cream-lt backdrop-blur-sm">
+        <span className="absolute right-2 top-3 rounded-full bg-ink/80 px-2 py-1 text-[0.5rem] font-bold uppercase text-cream-lt backdrop-blur-sm sm:right-3 sm:px-3 sm:text-[0.68rem]">
           Depois
         </span>
 
