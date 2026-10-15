@@ -43,13 +43,12 @@ const sections: { title: string; body: string[] }[] = [
     body: [
       "Entrar em contato pelo WhatsApp para dar acesso antecipado às condições da Black Novembro.",
       "Enviar comunicações sobre a campanha, ofertas e novidades da Reline Cosméticos.",
-      "Medir a audiência e melhorar a experiência desta página.",
     ],
   },
   {
     title: "4. Base legal",
     body: [
-      "O tratamento dos dados pessoais é realizado com base no seu consentimento (art. 7º, I, da Lei nº 13.709/2018 — LGPD) e no legítimo interesse para medição de audiência (art. 7º, IX).",
+      "O tratamento dos dados pessoais é realizado com base no seu consentimento (art. 7º, I, da Lei nº 13.709/2018 — LGPD).",
     ],
   },
   {
