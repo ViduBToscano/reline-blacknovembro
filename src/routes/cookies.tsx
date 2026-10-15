@@ -35,6 +35,7 @@ const sections: { title: string; body: string[] }[] = [
     body: [
       "Cookies essenciais: necessários para o funcionamento básico do site e para registrar a sua escolha de consentimento. Eles não podem ser desativados.",
       "Cookies de medição de audiência: utilizados apenas com o seu aceite, para entender visitas e interações e melhorar a experiência da página.",
+      "Pixel da Meta (Facebook/Instagram): utilizado apenas com o seu aceite, para medir a eficácia das nossas campanhas de divulgação, registrando ações como o envio do formulário de inscrição.",
     ],
   },
   {
@@ -47,7 +48,7 @@ const sections: { title: string; body: string[] }[] = [
   {
     title: "4. Cookies de terceiros",
     body: [
-      "Ferramentas de terceiros (como serviços de análise de audiência) podem definir cookies próprios quando ativadas mediante o seu consentimento. O tratamento feito por esses terceiros segue as políticas de privacidade deles.",
+      "Ferramentas de terceiros (como serviços de análise de audiência e o Pixel da Meta, de Meta Platforms, Inc.) podem definir cookies próprios quando ativadas mediante o seu consentimento. O tratamento feito por esses terceiros segue as políticas de privacidade deles.",
     ],
   },
   {
