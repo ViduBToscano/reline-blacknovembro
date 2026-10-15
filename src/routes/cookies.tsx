@@ -34,20 +34,19 @@ const sections: { title: string; body: string[] }[] = [
     title: "2. Cookies que utilizamos",
     body: [
       "Cookies essenciais: necessários para o funcionamento básico do site e para registrar a sua escolha de consentimento. Eles não podem ser desativados.",
-      "Cookies de medição de audiência: utilizados apenas com o seu aceite, para entender visitas e interações e melhorar a experiência da página.",
     ],
   },
   {
     title: "3. Como gerenciar seu consentimento",
     body: [
-      "Ao entrar na página, você pode aceitar ou rejeitar os cookies de medição no banner de consentimento.",
+      "Ao entrar na página, você pode aceitar ou rejeitar os cookies opcionais no banner de consentimento.",
       "Você também pode apagar os cookies e o armazenamento local do site nas configurações do seu navegador a qualquer momento; nesse caso, o banner voltará a aparecer na próxima visita.",
     ],
   },
   {
     title: "4. Cookies de terceiros",
     body: [
-      "Ferramentas de terceiros (como serviços de análise de audiência) podem definir cookies próprios quando ativadas mediante o seu consentimento. O tratamento feito por esses terceiros segue as políticas de privacidade deles.",
+      "Ferramentas de terceiros podem definir cookies próprios quando ativadas mediante o seu consentimento. O tratamento feito por esses terceiros segue as políticas de privacidade deles.",
     ],
   },
   {
