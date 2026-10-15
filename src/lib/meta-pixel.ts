@@ -63,6 +63,11 @@ export function initMetaPixel() {
   dispatch(["track", "PageView"]);
 }
 
+export function revokeMetaConsent() {
+  if (typeof window === "undefined" || !window.fbq) return;
+  dispatch(["consent", "revoke"]);
+}
+
 export function trackMetaEvent(
   event: string,
   params?: Record<string, unknown>,
