@@ -44,7 +44,6 @@ const sections: { title: string; body: string[] }[] = [
       "Entrar em contato pelo WhatsApp para dar acesso antecipado às condições da Black Novembro.",
       "Enviar comunicações sobre a campanha, ofertas e novidades da Reline Cosméticos.",
       "Medir a audiência e melhorar a experiência desta página.",
-      "Medir a eficácia das nossas campanhas de divulgação, com o seu consentimento, por meio do Pixel da Meta (Facebook/Instagram).",
     ],
   },
   {
@@ -57,7 +56,6 @@ const sections: { title: string; body: string[] }[] = [
     title: "5. Compartilhamento",
     body: [
       "Não vendemos seus dados. O compartilhamento ocorre apenas com operadores essenciais à operação (por exemplo, plataformas de hospedagem e mensageria), sempre sob obrigações de segurança e confidencialidade.",
-      "Com o seu consentimento, dados de interação com esta página (como o envio do formulário) são compartilhados com a Meta Platforms, Inc. para medição de campanhas, conforme a política de privacidade da Meta. Você pode retirar esse consentimento a qualquer momento apagando os cookies do site no navegador.",
     ],
   },
   {
