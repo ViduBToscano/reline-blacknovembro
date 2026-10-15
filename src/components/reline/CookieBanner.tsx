@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { initMetaPixel } from "@/lib/meta-pixel";
 
 const KEY = "reline-lgpd-consent";
 
@@ -9,6 +10,7 @@ export default function CookieBanner() {
   useEffect(() => {
     try {
       if (!localStorage.getItem(KEY)) setVisible(true);
+      else initMetaPixel();
     } catch {
       setVisible(true);
     }
@@ -18,6 +20,7 @@ export default function CookieBanner() {
     try {
       localStorage.setItem(KEY, value);
     } catch {}
+    if (value === "accepted") initMetaPixel();
     setVisible(false);
   };
 

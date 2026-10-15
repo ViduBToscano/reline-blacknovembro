@@ -28,6 +28,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { submitLead, trackEvent } from "@/lib/leads.functions";
+import { trackMetaEvent } from "@/lib/meta-pixel";
 
 import heroImage from "@/assets/hero-renata-expanded.webp";
 import offerAsset from "@/assets/80-metalico.webp.asset.json";
@@ -257,6 +258,7 @@ function Index() {
         setErro("Não conseguimos enviar agora. Tente novamente em instantes.");
         return;
       }
+      trackMetaEvent("Lead", undefined, { eventID: `lead-${Date.now()}` });
       setSent(true);
     } catch {
       setErro("Não conseguimos enviar agora. Tente novamente em instantes.");
@@ -695,7 +697,7 @@ function Index() {
           <div className="mt-4 flex justify-center">
             <span onClick={() => track("community_click")}>
               <WhatsAppButton
-                href="https://chat.whatsapp.com/"
+                href="https://cockpit.linqer.com.br/g/reline-black-friday"
                 size="lg"
                 onClick={() => track("community_click")}
               >
