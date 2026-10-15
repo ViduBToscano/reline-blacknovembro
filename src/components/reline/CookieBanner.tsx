@@ -36,8 +36,7 @@ export default function CookieBanner() {
       <div className="mx-auto flex max-w-[980px] flex-col gap-4 rounded-[28px] bg-cream-lt p-5 text-ink shadow-2xl sm:rounded-full sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:py-4 sm:pl-7 sm:pr-4">
         <p className="text-[0.84rem] leading-[1.6] text-ink/75">
           Usamos cookies essenciais para o funcionamento do site e, com o seu aceite, cookies de
-          medição e publicidade (Meta Pixel) para medir os resultados das nossas campanhas. Saiba
-          mais na{" "}
+          medição de audiência. Saiba mais na{" "}
           <Link
             to="/cookies"
             className="font-semibold text-ink underline underline-offset-2 hover:text-rose-dk"
