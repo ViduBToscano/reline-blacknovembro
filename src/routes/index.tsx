@@ -695,7 +695,7 @@ function Index() {
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 flex justify-center">
-            <span onClick={() => track("community_click")}>
+            <span>
               <WhatsAppButton
                 href="https://cockpit.linqer.com.br/g/reline-black-friday"
                 size="lg"

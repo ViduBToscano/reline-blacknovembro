@@ -153,20 +153,49 @@ function Painel() {
           </div>
         </div>
 
-        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mb-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {[
-            { label: "Clicaram em ofertas", value: stats.offer_click },
-            { label: "Viram o formulário", value: stats.form_view },
-            { label: "Clicaram em enviar", value: stats.form_submit_click },
-            { label: "Chegaram ao pop-up", value: stats.popup_view },
-            { label: "Clicaram na comunidade", value: stats.community_click },
-          ].map((card) => (
+            {
+              label: "Clicaram em ofertas",
+              value: stats.offer_click,
+              help: "Cliques nos botões de oferta da página (ex.: “Conferir ofertas”, “Quero entrar na comunidade”) que levam a pessoa até o formulário.",
+            },
+            {
+              label: "Viram o formulário",
+              value: stats.form_view,
+              help: "Visitas em que o formulário “Quero entrar na Black November” apareceu na tela, seja rolando a página ou vindo de um botão.",
+            },
+            {
+              label: "Clicaram em enviar",
+              value: stats.form_submit_click,
+              help: "Cliques no botão de enviar do formulário. Inclui tentativas com dados incompletos ou inválidos, por isso pode ser maior que o número de cadastros.",
+            },
+            {
+              label: "Chegaram ao pop-up",
+              value: stats.popup_view,
+              help: "Cadastros concluídos com sucesso: o pop-up “Você está dentro!” foi exibido. Deve ficar próximo do total de cadastros abaixo.",
+            },
+            {
+              label: "Clicaram na comunidade",
+              value: stats.community_click,
+              help: "Cliques no botão “Entrar na comunidade” dentro do pop-up, que leva ao grupo. É a etapa final do funil.",
+            },
+          ].map((card, i) => (
             <div key={card.label} className="rounded-2xl border border-border bg-ink-2/70 p-5">
-              <p className="text-3xl font-extrabold text-card-foreground">{card.value}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{card.label}</p>
+              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-rose-lt/80">
+                Etapa {i + 1}
+              </p>
+              <p className="mt-1 text-3xl font-extrabold text-card-foreground">{card.value}</p>
+              <p className="mt-1 text-sm font-semibold text-card-foreground">{card.label}</p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{card.help}</p>
             </div>
           ))}
         </div>
+        <p className="mb-8 text-xs leading-relaxed text-muted-foreground">
+          Os números contam cliques e visualizações, não pessoas únicas: a mesma pessoa pode ser
+          contada mais de uma vez se repetir a ação. A lista abaixo mostra apenas os cadastros
+          enviados com sucesso.
+        </p>
 
         <div className="overflow-x-auto rounded-2xl border border-border">
           <table className="w-full text-left text-sm">
