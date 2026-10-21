@@ -31,6 +31,7 @@ import { submitLead, trackEvent } from "@/lib/leads.functions";
 import { trackMetaEvent } from "@/lib/meta-pixel";
 
 import heroImage from "@/assets/hero-renata-expanded.webp";
+import heroImageMobile from "@/assets/hero-renata-mobile.webp";
 import offerAsset from "@/assets/80-metalico.webp.asset.json";
 import offerFlatAsset from "@/assets/80-chapado.webp.asset.json";
 import logoAsset from "@/assets/logo_reline.png.asset.json";
@@ -288,12 +289,16 @@ function Index() {
 
       {/* Hero */}
       <section className="campaign-hero relative overflow-hidden bg-background">
+        <picture>
+          <source media="(max-width: 767px)" srcSet={heroImageMobile} />
         <img
           src={heroImage}
           alt="Renata Fraga no espaço Reline, entre prateleiras de produtos"
           className="campaign-hero-photo"
           fetchPriority="high"
+          decoding="async"
         />
+        </picture>
         <div className="campaign-hero-scrim" aria-hidden="true" />
         <div className="container-page relative campaign-hero-inner">
           <div className="campaign-hero-copy">
