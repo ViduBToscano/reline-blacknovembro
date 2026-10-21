@@ -67,6 +67,10 @@ const BEFORE_AFTER_RESULTS = [
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    links: [
+      { rel: "preload", as: "image", href: heroImageMobile, media: "(max-width: 767px)", fetchPriority: "high" },
+      { rel: "preload", as: "image", href: heroImage, media: "(min-width: 768px)", fetchPriority: "high" },
+    ],
     meta: [
       { title: "Black November Reline 2026 | Descontos progressivos a partir de 04.11" },
       {
