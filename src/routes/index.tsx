@@ -70,6 +70,7 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "preload", as: "image", href: heroImageMobile, media: "(max-width: 767px)", fetchPriority: "high" },
       { rel: "preload", as: "image", href: heroImage, media: "(min-width: 768px)", fetchPriority: "high" },
+      { rel: "canonical", href: EVENT_URL },
     ],
     meta: [
       { title: "Black November Reline 2026 | Descontos progressivos a partir de 04.11" },
@@ -95,7 +96,6 @@ export const Route = createFileRoute("/")({
           "Descontos progressivos em produtos Reline a partir de 04 de novembro. A comunidade sabe primeiro.",
       },
     ],
-    links: [{ rel: "canonical", href: EVENT_URL }],
     scripts: [
       {
         type: "application/ld+json",
